@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+
+<head>
+
+	<!-- Basic Page Needs
+================================================== -->
+	<title>INTERNMATE</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+	<!-- CSS
+================================================== -->
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main-color.css' %}" id="colors">
+
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header Container
+================================================== -->
+		<header id="header-container">
+			<div id="header">
+				<div class="container">
+					<div class="left-side">
+						<div id="logo">
+							<a href="{% url 'index' %}"> <img src="{% static 'images/internmate_transparent.png' %}"
+									alt="Logo"></a>
+						</div>
+						<div class="mmenu-trigger">
+							<button class="hamburger hamburger--collapse" type="button">
+								<span class="hamburger-box">
+									<span class="hamburger-inner"></span>
+								</span>
+							</button>
+						</div>
+						<nav id="navigation" class="style-1">
+							<ul id="responsive">
+								<li><a href="{% url 'index' %}">Home</a></li>
+								<li><a href="{% url 'internships' %}">Internships</a>
+									<ul>
+										<li><a href="{% url 'fullstackwithpython' %}">Full Stack Web Dev</a></li>
+										<li><a href="{% url 'webdesigning' %}">Web Dev</a></li>
+										<li><a href="{% url 'pythoninternship' %}">Python</a></li>
+										<li><a href="{% url 'javainternship' %}">Java</a></li>
+										<li><a href="{% url 'javascriptinternship' %}">JavaScript</a></li>
+										<li><a href="{% url 'bootstrapinternship' %}">Bootstrap</a></li>
+										<li><a href="{% url 'htmlinternship' %}">HTML</a></li>
+										<li><a href="{% url 'cssinternship' %}">CSS</a></li>
+									</ul>
+								</li>
+								<li><a href="{% url 'aboutus' %}">About</a></li>
+								<li><a class="current" href="{% url 'faq' %}">FAQ</a></li>
+								<li><a href="{% url 'contact' %}">Contact</a></li>
+							</ul>
+						</nav>
+
+						<div class="clearfix"></div>
+					</div>
+					<div class="right-side">
+						<div class="header-widget">
+							<a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim button border"><i
+									class="sl sl-icon-login"></i> Sign In</a>
+							<a href="{% url 'contact' %}" class="button border with-icon">Contact Us <i
+									class="sl sl-icon-envelope-open"></i></a>
+						</div>
+					</div>
+					<!-- Sign In Popup -->
+					<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+
+						<div class="small-dialog-header">
+							<h3>Sign In</h3>
+						</div>
+
+						<!--Tabs -->
+						<div class="sign-in-form style-1">
+
+							<ul class="tabs-nav">
+								<li class=""><a href="#tab1">Log In</a></li>
+								<li><a href="#tab2">Register</a></li>
+							</ul>
+
+							<div class="tabs-container alt">
+
+								<!-- Login -->
+								<div class="tab-content" id="tab1" style="display: none;">
+									<form method="post" class="login">
+
+										<p class="form-row form-row-wide">
+											<label for="username">Username:
+												<i class="im im-icon-Male"></i>
+												<input type="text" class="input-text" name="username" id="username"
+													value="" />
+											</label>
+										</p>
+
+										<p class="form-row form-row-wide">
+											<label for="password">Password:
+												<i class="im im-icon-Lock-2"></i>
+												<input class="input-text" type="password" name="password"
+													id="password" />
+											</label>
+											<span class="lost_password">
+												<a href="#">Lost Your Password?</a>
+											</span>
+										</p>
+
+										<div class="form-row">
+											<input type="submit" class="button border margin-top-5" name="login"
+												value="Login" />
+											<div class="checkboxes margin-top-10">
+												<input id="remember-me" type="checkbox" name="check">
+												<label for="remember-me">Remember Me</label>
+											</div>
+										</div>
+
+									</form>
+								</div>
+
+								<!-- Register -->
+								<div class="tab-content" id="tab2" style="display: none;">
+
+									<form method="post" class="register">
+
+										<p class="form-row form-row-wide">
+											<label for="username2">Username:
+												<i class="im im-icon-Male"></i>
+												<input type="text" class="input-text" name="username" id="username2"
+													value="" />
+											</label>
+										</p>
+
+										<p class="form-row form-row-wide">
+											<label for="email2">Email Address:
+												<i class="im im-icon-Mail"></i>
+												<input type="text" class="input-text" name="email" id="email2"
+													value="" />
+											</label>
+										</p>
+
+										<p class="form-row form-row-wide">
+											<label for="phone">Phone Number:
+												<i class="sl sl-icon-phone"></i>
+												<input type="tel" class="input-text" name="phone" id="phone" value="" />
+											</label>
+										</p>
+
+										<p class="form-row form-row-wide">
+											<label for="password1">Password:
+												<i class="im im-icon-Lock-2"></i>
+												<input class="input-text" type="password" name="password1"
+													id="password1" />
+											</label>
+										</p>
+
+										<p class="form-row form-row-wide">
+											<label for="password2">Repeat Password:
+												<i class="im im-icon-Lock-2"></i>
+												<input class="input-text" type="password" name="password2"
+													id="password2" />
+											</label>
+										</p>
+
+										<input type="submit" class="button border fw margin-top-10" name="register"
+											value="Register" />
+
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!-- Sign In Popup / End -->
+				</div>
+			</div>
+		</header>
+
+		<div class="clearfix">
+			<div class="col-md-6" style="margin: 0 auto; float: none;">
+				<h4 class="headline margin-top-70 margin-bottom-30 text-center">Frequently Asked Questions</h4>
+
+				<!-- Toggles Container -->
+				<div class="style-2">
+
+					<!-- Toggle 1 -->
+					<div class="toggle-wrap">
+						<span class="trigger"><a href="#">What is InternMate?<i class="sl sl-icon-plus"></i></a></span>
+						<div class="toggle-container">
+							<p>InternMate is your gateway to valuable internship opportunities and career growth. We
+								provide comprehensive support and resources for students and young professionals,
+								helping to nurture the talents of tomorrow.</p>
+						</div>
+					</div>
+
+					<!-- Toggle 2 -->
+					<div class="toggle-wrap">
+						<span class="trigger"><a href="#">Why should I choose InternMate?<i
+									class="sl sl-icon-plus"></i></a></span>
+						<div class="toggle-container">
+							<p>
+								<strong>Extensive Internship Listings</strong><br>
+								Find the perfect match for your skills and interests through our extensive
+								listings.<br><br>
+								<strong>Comprehensive Study Materials</strong><br>
+								Enhance your knowledge with our curated resources, covering a wide range of
+								topics.<br><br>
+								<strong>Interview Preparation</strong><br>
+								Ace your interviews with our thorough preparation guides and realistic mock
+								sessions.<br><br>
+								<strong>Communication Skills Training</strong><br>
+								Boost your confidence and improve your soft skills with our specialized training
+								sessions.<br><br>
+								<strong>Mentorship and Guidance</strong><br>
+								Receive personalized advice and guidance from industry experts who are committed to your
+								success.<br><br>
+								<strong>Company Referrals</strong><br>
+								Get connected with top companies that are actively seeking talented interns.
+							</p>
+						</div>
+					</div>
+
+					<!-- Toggle 3 -->
+					<div class="toggle-wrap">
+						<span class="trigger"><a href="#">How can InternMate help me prepare for interviews?<i
+									class="sl sl-icon-plus"></i></a></span>
+						<div class="toggle-container">
+							<p>We offer comprehensive preparation guides and mock interview sessions designed to help
+								you practice and excel in your interviews, boosting your confidence and readiness.</p>
+						</div>
+					</div>
+
+					<!-- Toggle 4 -->
+					<div class="toggle-wrap">
+						<span class="trigger"><a href="#">What kind of study materials does InternMate offer?<i
+									class="sl sl-icon-plus"></i></a></span>
+						<div class="toggle-container">
+							<p>Our platform provides a wealth of curated resources, including study guides, articles,
+								and tutorials, to enhance your knowledge and skills across various disciplines.</p>
+						</div>
+					</div>
+
+					<!-- Toggle 5 -->
+					<div class="toggle-wrap">
+						<span class="trigger"><a href="#">How can InternMate improve my communication skills?<i
+									class="sl sl-icon-plus"></i></a></span>
+						<div class="toggle-container">
+							<p>We offer targeted training sessions that focus on boosting your confidence and honing
+								your communication and soft skills, essential for professional success.</p>
+						</div>
+					</div>
+
+					<!-- Toggle 6 -->
+					<div class="toggle-wrap">
+						<span class="trigger"><a href="#">Can InternMate connect me with top companies?<i
+									class="sl sl-icon-plus"></i></a></span>
+						<div class="toggle-container">
+							<p>Yes, through our network of industry contacts, we provide referrals to connect you with
+								top companies that are actively seeking talented interns like you.</p>
+						</div>
+					</div>
+
+					<!-- Toggle 7 -->
+					<div class="toggle-wrap">
+						<span class="trigger"><a href="#">What kind of mentorship does InternMate provide?<i
+									class="sl sl-icon-plus"></i></a></span>
+						<div class="toggle-container">
+							<p>Our mentorship program offers personalized advice and guidance from seasoned industry
+								experts, helping you navigate your career path and achieve your professional goals.</p>
+						</div>
+					</div>
+
+				</div>
+				<!-- Toggles Container / End -->
+			</div>
+
+			<div id="footer">
+				<!-- Main -->
+				<div class="container">
+					<div class="row">
+						<div class="col-md-5 col-sm-6">
+							<img class="footer-logo" src="{% static 'images/internmate_transparent.png' %}"
+								alt="InternMate Logo">
+
+							<br><br>
+							<p>InternMate is dedicated to bridging the gap between students and top companies by
+								offering comprehensive internship opportunities. We provide extensive resources and
+								personalized guidance to help you kickstart your career and achieve your professional
+								goals.</p>
+						</div>
+
+						<div class="col-md-4 col-sm-6">
+							<h4>Helpful Links</h4>
+							<ul class="footer-links">
+								<li><a href="#sign-in-dialog" class="popup-with-zoom-anim open-login">Login</a></li>
+								<li><a href="#sign-in-dialog" class="popup-with-zoom-anim open-register">Sign Up</a>
+								<li><a href="#">My Account</a></li>
+							</ul>
+
+							<ul class="footer-links">
+								<li><a href="{% url 'faq' %}">FAQ</a></li>
+								<li><a href="{% url 'contact' %}">Contact</a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+
+						<div class="col-md-3 col-sm-12">
+							<h4>Contact Us</h4>
+							<div class="text-widget">
+								<span>AMRITSAR,PUNJAB</span> <br>
+								Phone: <span> +91 9877817876 </span><br>
+								E-Mail:<span> <a href="mailto:internamte2024@gmail.com">internamte2024@gmail.com</a>
+								</span><br>
+							</div>
+
+							<ul class="social-icons margin-top-20">
+								<li><a class="linkedin" href="https://linkedin.com/in/internmate-32b619317"></a>"><i class="icon-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Copyright -->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="copyrights">© 2024 InternMate. All Rights Reserved.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript" src="{% static 'scripts/jquery-3.4.1.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'scripts/jquery-migrate-3.1.0.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'scripts/mmenu.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'scripts/chosen.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'scripts/slick.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'scripts/rangeslider.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'scripts/magnific-popup.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'scripts/waypoints.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'scripts/counterup.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'scripts/jquery-ui.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'scripts/tooltips.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'scripts/custom.js' %}"></script>
+
+			<!-- REVOLUTION SLIDER SCRIPT -->
+			<script type="text/javascript" src="{% static 'scripts/themepunch.tools.min.js' %}"></script>
+			<script type="text/javascript" src="{% static 'scripts/themepunch.revolution.min.js' %}"></script>
+
+
+			<script type="text/javascript">
+				var tpj = jQuery;
+				var revapi4;
+				tpj(document).ready(function () {
+					if (tpj("#rev_slider_4_1").revolution == undefined) {
+						revslider_showDoubleJqueryError("#rev_slider_4_1");
+					} else {
+						revapi4 = tpj("#rev_slider_4_1").show().revolution({
+							sliderType: "standard",
+							jsFileLocation: "scripts/",
+							sliderLayout: "auto",
+							dottedOverlay: "none",
+							delay: 9000,
+							navigation: {
+								keyboardNavigation: "off",
+								keyboard_direction: "horizontal",
+								mouseScrollNavigation: "off",
+								onHoverStop: "on",
+								touch: {
+									touchenabled: "on",
+									swipe_threshold: 75,
+									swipe_min_touches: 1,
+									swipe_direction: "horizontal",
+									drag_block_vertical: false
+								}
+								,
+								arrows: {
+									style: "zeus",
+									enable: true,
+									hide_onmobile: true,
+									hide_under: 600,
+									hide_onleave: true,
+									hide_delay: 200,
+									hide_delay_mobile: 1200,
+									tmp: '<div class="tp-title-wrap"></div>',
+									left: {
+										h_align: "left",
+										v_align: "center",
+										h_offset: 40,
+										v_offset: 0
+									},
+									right: {
+										h_align: "right",
+										v_align: "center",
+										h_offset: 40,
+										v_offset: 0
+									}
+								}
+								,
+								bullets: {
+									enable: false,
+									hide_onmobile: true,
+									hide_under: 600,
+									style: "hermes",
+									hide_onleave: true,
+									hide_delay: 200,
+									hide_delay_mobile: 1200,
+									direction: "horizontal",
+									h_align: "center",
+									v_align: "bottom",
+									h_offset: 0,
+									v_offset: 32,
+									space: 5,
+									tmp: ''
+								}
+							},
+							viewPort: {
+								enable: true,
+								outof: "pause",
+								visible_area: "80%"
+							},
+							responsiveLevels: [1200, 992, 768, 480],
+							visibilityLevels: [1200, 992, 768, 480],
+							gridwidth: [1180, 1024, 778, 480],
+							gridheight: [640, 500, 400, 300],
+							lazyType: "none",
+							parallax: {
+								type: "mouse",
+								origo: "slidercenter",
+								speed: 2000,
+								levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 25, 47, 48, 49, 50, 51, 55],
+								type: "mouse",
+							},
+							shadow: 0,
+							spinner: "off",
+							stopLoop: "off",
+							stopAfterLoops: -1,
+							stopAtSlide: -1,
+							shuffle: "off",
+							autoHeight: "off",
+							hideThumbsOnMobile: "off",
+							hideSliderAtLimit: 0,
+							hideCaptionAtLimit: 0,
+							hideAllCaptionAtLilmit: 0,
+							debugMode: false,
+							fallbacks: {
+								simplifyAll: "off",
+								nextSlideOnWindowFocus: "off",
+								disableFocusListener: false,
+							}
+						});
+					}
+				});	/*ready*/
+			</script>
+
+
+			<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  
+	(Load Extensions only on Local File Systems ! 
+	The following part can be removed on Server for On Demand Loading) -->
+			<script type="text/javascript"
+				src="{% static 'scripts/extensions/revolution.extension.actions.min.js' %}"></script>
+			<script type="text/javascript"
+				src="{% static 'scripts/extensions/revolution.extension.carousel.min.js' %}"></script>
+			<script type="text/javascript"
+				src="{% static 'scripts/extensions/revolution.extension.kenburn.min.js' %}"></script>
+			<script type="text/javascript"
+				src="{% static 'scripts/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+			<script type="text/javascript"
+				src="{% static 'scripts/extensions/revolution.extension.migration.min.js' %}"></script>
+			<script type="text/javascript"
+				src="{% static 'scripts/extensions/revolution.extension.navigation.min.js' %}"></script>
+			<script type="text/javascript"
+				src="{% static 'scripts/extensions/revolution.extension.parallax.min.js' %}"></script>
+			<script type="text/javascript"
+				src="{% static 'scripts/extensions/revolution.extension.slideanims.min.js' %}"></script>
+			<script type="text/javascript"
+				src="{% static 'scripts/extensions/revolution.extension.video.min.js' %}"></script>
+
+
+
+</body>
+
+</html>

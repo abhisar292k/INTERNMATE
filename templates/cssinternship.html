@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+
+<head>
+
+    <!-- Basic Page Needs
+================================================== -->
+    <title>INTERNMATE-CSS-INTERNSHIP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+================================================== -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main-color.css' %}" id="colors">
+
+</head>
+
+<body>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header Container
+================================================== -->
+        <header id="header-container">
+            <div id="header" class="not-sticky">
+                <div class="container">
+                    <div class="left-side">
+                        <div id="logo">
+                            <a href="{% url 'index' %}"> <img src="{% static 'images/internmate_transparent.png' %}"
+                                    alt="Logo"></a>
+                        </div>
+                        <div class="mmenu-trigger">
+                            <button class="hamburger hamburger--collapse" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                        <nav id="navigation" class="style-1">
+                            <ul id="responsive">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a class="current" href="{% url 'internships' %}">Internships</a>
+                                    <ul>
+                                        <li><a href="{% url 'fullstackwithpython' %}">Full Stack Web Dev</a></li>
+                                        <li><a href="{% url 'webdesigning' %}">Web Dev</a></li>
+                                        <li><a href="{% url 'pythoninternship' %}">Python</a></li>
+                                        <li><a href="{% url 'javainternship' %}">Java</a></li>
+                                        <li><a href="{% url 'javascriptinternship' %}">JavaScript</a></li>
+                                        <li><a href="{% url 'bootstrapinternship' %}">Bootstrap</a></li>
+                                        <li><a href="{% url 'htmlinternship' %}">HTML</a></li>
+                                        <li><a href="{% url 'cssinternship' %}">CSS</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{% url 'aboutus' %}">About</a></li>
+                                <li><a href="{% url 'faq' %}">FAQ</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="right-side">
+                        <div class="header-widget">
+                            <a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim button border"><i
+                                    class="sl sl-icon-login"></i> Sign In</a>
+                            <a href="{% url 'contact' %}" target="_blank" class="button border with-icon">Contact Us <i
+                                    class="sl sl-icon-envelope-open"></i></a>
+                        </div>
+                    </div>
+                    <!-- Sign In Popup -->
+                    <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+
+                        <div class="small-dialog-header">
+                            <h3>Sign In</h3>
+                        </div>
+
+                        <!--Tabs -->
+                        <div class="sign-in-form style-1">
+
+                            <ul class="tabs-nav">
+                                <li class=""><a href="#tab1">Log In</a></li>
+                                <li><a href="#tab2">Register</a></li>
+                            </ul>
+
+                            <div class="tabs-container alt">
+
+                                <!-- Login -->
+                                <div class="tab-content" id="tab1" style="display: none;">
+                                    <form method="post" class="login">
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="username">Username:
+                                                <i class="im im-icon-Male"></i>
+                                                <input type="text" class="input-text" name="username" id="username"
+                                                    value="" />
+                                            </label>
+                                        </p>
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="password">Password:
+                                                <i class="im im-icon-Lock-2"></i>
+                                                <input class="input-text" type="password" name="password"
+                                                    id="password" />
+                                            </label>
+                                            <span class="lost_password">
+                                                <a href="#">Lost Your Password?</a>
+                                            </span>
+                                        </p>
+
+                                        <div class="form-row">
+                                            <input type="submit" class="button border margin-top-5" name="login"
+                                                value="Login" />
+                                            <div class="checkboxes margin-top-10">
+                                                <input id="remember-me" type="checkbox" name="check">
+                                                <label for="remember-me">Remember Me</label>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                                <!-- Register -->
+                                <div class="tab-content" id="tab2" style="display: none;">
+
+                                    <form method="post" class="register">
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="username2">Username:
+                                                <i class="im im-icon-Male"></i>
+                                                <input type="text" class="input-text" name="username" id="username2"
+                                                    value="" />
+                                            </label>
+                                        </p>
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="email2">Email Address:
+                                                <i class="im im-icon-Mail"></i>
+                                                <input type="text" class="input-text" name="email" id="email2"
+                                                    value="" />
+                                            </label>
+                                        </p>
+                                        <p class="form-row form-row-wide">
+											<label for="phone">Phone Number:
+												<i class="sl sl-icon-phone"></i>
+												<input type="tel" class="input-text" name="phone" id="phone" value="" />
+											</label>
+										</p>
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="password1">Password:
+                                                <i class="im im-icon-Lock-2"></i>
+                                                <input class="input-text" type="password" name="password1"
+                                                    id="password1" />
+                                            </label>
+                                        </p>
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="password2">Repeat Password:
+                                                <i class="im im-icon-Lock-2"></i>
+                                                <input class="input-text" type="password" name="password2"
+                                                    id="password2" />
+                                            </label>
+                                        </p>
+
+                                        <input type="submit" class="button border fw margin-top-10" name="register"
+                                            value="Register" />
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sign In Popup / End -->
+                </div>
+            </div>
+        </header>
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
+
+        <!-- Slider
+================================================== -->
+        <div class="listing-slider mfp-gallery-container margin-bottom-0">
+            <a href="{% static 'images/single-listing-05b.jpg' %}"
+                data-background-image="{% static 'images/css-3-logo-svgrepo-com.png' %}" class="item mfp-gallery"
+                title="Title 1"></a>
+            <a href="{% static 'images/single-listing-05b.jpg' %}"
+                data-background-image="{% static 'images/css-3-logo-svgrepo-com.png' %}" class="item mfp-gallery"
+                title="Title 3"></a>
+            <a href="{% static 'images/single-listing-05c.jpg' %}"
+                data-background-image="{% static 'images/css-3-logo-svgrepo-com.png' %}" class="item mfp-gallery"
+                title="Title 2"></a>
+            <a href="{% static 'images/single-listing-05d.jpg' %}"
+                data-background-image="{% static 'images/css-3-logo-svgrepo-com.png' %}" class="item mfp-gallery"
+                title="Title 4"></a>
+        </div>
+
+
+
+        <!-- Content
+================================================== -->
+        <div class="container">
+            <div class="row sticky-wrapper">
+                <div class="col-lg-8 col-md-8 padding-right-30">
+
+                    <!-- Titlebar -->
+                    <div id="titlebar" class="listing-titlebar">
+                        <div class="listing-titlebar-title">
+                            <h2>CSS <span class="listing-tag">Designing</span></h2>
+                            <div class="star-rating" data-rating="4.5">
+                                <div class="rating-counter"><a href="#listing-reviews">(12 reviews)</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Listing Nav -->
+                    <div id="listing-nav" class="listing-nav-container">
+                        <ul class="listing-nav">
+                            <li><a href="#listing-overview" class="active">Overview</a></li>
+                            <li><a href="#listing-pricing-list">Pricing</a></li>
+                            <li><a href="#Course-content">Course content</a></li>
+                            <li><a href="#listing-reviews">Reviews</a></li>
+                            <li><a href="#add-review">Add Review</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Overview -->
+                    <div id="listing-overview" class="listing-section">
+
+                        <!-- Description -->
+                        <h3 class="listing-desc-headline margin-top-30 margin-bottom-30">Overview</h3>
+                        <p>
+                            CSS (Cascading Style Sheets) is a fundamental technology used in web development to control
+                            the presentation and layout of HTML documents. It enables web designers and developers to
+                            style web pages by defining how HTML elements should appear on the screen, in print, or even
+                            spoken aloud.
+                        </p>
+                        <p>
+                            CSS simplifies the process of designing web pages by separating the structure (HTML) from
+                            the presentation (CSS), allowing for greater flexibility and control over the visual aspects
+                            of a website. Key reasons why CSS is essential include:
+                        </p>
+                        <ul>
+                            <li><strong>Style Consistency:</strong> CSS allows for consistent styling across multiple
+                                web pages of a site, ensuring a cohesive user experience.</li>
+                            <li><strong>Responsive Design:</strong> It facilitates the creation of responsive layouts
+                                that adapt to different screen sizes and devices.</li>
+                            <li><strong>Enhanced Accessibility:</strong> CSS aids in making web content accessible to
+                                users with disabilities by enabling proper semantic structuring and styling.</li>
+                            <li><strong>Efficiency:</strong> By separating content and presentation, CSS makes it easier
+                                to update and maintain large websites.</li>
+                            <li><strong>Cross-Browser Compatibility:</strong> It helps ensure that web pages look
+                                consistent and function correctly across various browsers.</li>
+                            <li><strong>Animation and Effects:</strong> CSS allows for animations, transitions, and
+                                visual effects without relying on JavaScript.</li>
+                        </ul>
+
+                        <!-- Listing Contacts -->
+                        <div class="listing-links-container">
+
+                            <ul class="listing-links contact-links">
+                                <li><a href="tel:12-345-678" class="listing-links"><i class="fa fa-phone"></i> +91
+                                        9877817876</a></li>
+                                <li><a href="mailto:internamte2024@gmail.com"" class=" listing-links"><i
+                                            class="fa fa-envelope-o"></i> internamte2024@gmail.com</a></li>
+                                <li><a href="#" target="_blank" class="listing-links"><i class="fa fa-link"></i>
+                                        www.example.com</a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+
+                            <ul class="listing-links">
+                                <li><a href="https://www.linkedin.com/in/internmate-32b619317" target="_blank"
+                                        class="listing-links-fb"><i class="fa fa-linkedin-square"></i> LINKEDIN</a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                    <!-- Pricing -->
+                    <div id="listing-pricing-list" class="listing-section">
+                        <h3 class="listing-desc-headline margin-top-70 margin-bottom-30">Pricing</h3>
+                        <div class="pricing-list-container">
+                            <ul>
+                                <li>
+                                    <h5>1-Month Internship</h5>
+                                    <span>2000 INR</span>
+                                </li>
+                                <li>
+                                    <h5>45-Day Internship</h5>
+                                    <span>3500 INR</span>
+                                </li>
+                                <li>
+                                    <h5>3-Month Internship</h5>
+                                    <span>5500 INR</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Course Content -->
+                    <div class="container" id="Course-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="headline margin-top-70 margin-bottom-30">CSS Course Content</h4>
+                                <table class="basic-table">
+                                    <thead>
+                                        <tr>
+                                            <th>S.No</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td data-label="S.No">1</td>
+                                            <td data-label="Description">Introduction to CSS</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">2</td>
+                                            <td data-label="Description">CSS Syntax and Selectors</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">3</td>
+                                            <td data-label="Description">CSS Box Model and Layouts</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">4</td>
+                                            <td data-label="Description">CSS Flexbox Layout</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">5</td>
+                                            <td data-label="Description">CSS Grid Layout</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">6</td>
+                                            <td data-label="Description">CSS Responsive Design</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">7</td>
+                                            <td data-label="Description">CSS Transitions and Animations</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">8</td>
+                                            <td data-label="Description">CSS Transformations</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">9</td>
+                                            <td data-label="Description">CSS Media Queries</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">10</td>
+                                            <td data-label="Description">CSS Variables (Custom Properties)</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">11</td>
+                                            <td data-label="Description">CSS Pseudo-classes and Pseudo-elements</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">12</td>
+                                            <td data-label="Description">CSS Specificity and Inheritance</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">13</td>
+                                            <td data-label="Description">CSS Advanced Selectors</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">14</td>
+                                            <td data-label="Description">CSS Filters and Blend Modes</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">15</td>
+                                            <td data-label="Description">CSS Positioning and Layout Techniques</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">16</td>
+                                            <td data-label="Description">CSS z-index and Stacking Context</td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="S.No">17</td>
+                                            <td data-label="Description">CSS Best Practices and Performance Optimization
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="listing-reviews" class="listing-section">
+                        <h3 class="listing-desc-headline margin-top-75 margin-bottom-20">Reviews <span>(12)</span></h3>
+
+                        <!-- Rating Overview -->
+                        <div class="rating-overview">
+                            <div class="rating-overview-box">
+                                <span class="rating-overview-box-total">4.2</span>
+                                <span class="rating-overview-box-percent">out of 5.0</span>
+                                <div class="star-rating" data-rating="5"></div>
+                            </div>
+
+                            <div class="rating-bars">
+                                <div class="rating-bars-item">
+                                    <span class="rating-bars-name">Value for Money <i class="tip"
+                                            data-tip-content="Overall experience received for the amount spent"></i></span>
+                                    <span class="rating-bars-inner">
+                                        <span class="rating-bars-rating" data-rating="4.8">
+                                            <span class="rating-bars-rating-inner"></span>
+                                        </span>
+                                        <strong>4.8</strong>
+                                    </span>
+                                </div>
+                                <div class="rating-bars-item">
+                                    <span class="rating-bars-name">Instructor Knowledge<i class="tip"
+                                            data-tip-content="The knowledge of instructor"></i></span>
+                                    <span class="rating-bars-inner">
+                                        <span class="rating-bars-rating" data-rating="4.0">
+                                            <span class="rating-bars-rating-inner"></span>
+                                        </span>
+                                        <strong>4.5</strong>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Rating Overview / End -->
+
+                        <div class="clearfix"></div>
+
+                        <!-- Reviews -->
+                        <section class="comments listing-reviews">
+                            <ul>
+                                <li>
+                                    <div class="avatar"><img
+                                            src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
+                                            alt="" /></div>
+                                    <div class="comment-content">
+                                        <div class="arrow-comment"></div>
+                                        <div class="comment-by">Amit Sharma <i class="tip"
+                                                data-tip-content="Person who left this review actually was a customer"></i>
+                                            <span class="date">April 2024</span>
+                                            <div class="star-rating" data-rating="5"></div>
+                                        </div>
+                                        <p>I had a great experience learning Python at InternMate. The course content
+                                            was thorough, and the instructors were very knowledgeable.</p>
+                                        <a href="#" class="rate-review"><i class="sl sl-icon-like"></i> Helpful Review
+                                            <span>10</span></a>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="avatar"><img
+                                            src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
+                                            alt="" /> </div>
+                                    <div class="comment-content">
+                                        <div class="arrow-comment"></div>
+                                        <div class="comment-by">Priya Singh <span class="date">May 2024</span>
+                                            <div class="star-rating" data-rating="4"></div>
+                                        </div>
+                                        <p>The Python course was very well structured. I feel much more confident in my
+                                            coding skills now. Highly recommend!</p>
+                                        <a href="#" class="rate-review"><i class="sl sl-icon-like"></i> Helpful Review
+                                            <span>8</span></a>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="avatar"><img
+                                            src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70"
+                                            alt="" /></div>
+                                    <div class="comment-content">
+                                        <div class="arrow-comment"></div>
+                                        <div class="comment-by">Rahul Verma <span class="date">May 2024</span>
+                                            <div class="star-rating" data-rating="4.5"></div>
+                                        </div>
+                                        <p>InternMate provided an excellent Python training. The practical sessions were
+                                            especially useful.</p>
+                                        <a href="#" class="rate-review"><i class="sl sl-icon-like"></i> Helpful Review
+                                            <span>6</span></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- Pagination -->
+                        <div class="clearfix"></div>
+                        <div class="pagination-container margin-top-30">
+                            <nav class="pagination">
+                                <ul>
+                                    <li><a href="#" class="current-page">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#"><i class="sl sl-icon-arrow-right"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="clearfix"></div>
+                        <!-- Pagination / End -->
+                    </div>
+
+                    <!-- Add Review Box -->
+                    <!-- Add Review Box -->
+                    <div id="add-review" class="add-review-box">
+
+                        <!-- Add Review -->
+                        <h3 class="listing-desc-headline margin-bottom-10">Add Review</h3>
+                        <p class="comment-notes">Your email address will not be published.</p>
+
+                        <!-- Subratings Container -->
+                        <div class="sub-ratings-container">
+
+                            <!-- Subrating #1 -->
+                            <div class="add-sub-rating">
+                                <div class="sub-rating-title">Service <i class="tip"
+                                        data-tip-content="Quality of customer service and attitude to work with you"></i>
+                                </div>
+                                <div class="sub-rating-stars">
+                                    <!-- Leave Rating -->
+                                    <div class="clearfix"></div>
+                                    <form class="leave-rating">
+                                        <input type="radio" name="rating" id="rating-1" value="1" />
+                                        <label for="rating-1" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-2" value="2" />
+                                        <label for="rating-2" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-3" value="3" />
+                                        <label for="rating-3" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-4" value="4" />
+                                        <label for="rating-4" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-5" value="5" />
+                                        <label for="rating-5" class="fa fa-star"></label>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Subrating #2 -->
+                            <div class="add-sub-rating">
+                                <div class="sub-rating-title">Value for Money <i class="tip"
+                                        data-tip-content="Overall experience received for the amount spent"></i></div>
+                                <div class="sub-rating-stars">
+                                    <!-- Leave Rating -->
+                                    <div class="clearfix"></div>
+                                    <form class="leave-rating">
+                                        <input type="radio" name="rating" id="rating-11" value="1" />
+                                        <label for="rating-11" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-12" value="2" />
+                                        <label for="rating-12" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-13" value="3" />
+                                        <label for="rating-13" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-14" value="4" />
+                                        <label for="rating-14" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-15" value="5" />
+                                        <label for="rating-15" class="fa fa-star"></label>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Subrating #4 -->
+                            <div class="add-sub-rating">
+                                <div class="sub-rating-title">Instructor knowledge <i class="tip"
+                                        data-tip-content="The physical condition of the business"></i></div>
+                                <div class="sub-rating-stars">
+                                    <!-- Leave Rating -->
+                                    <div class="clearfix"></div>
+                                    <form class="leave-rating">
+                                        <input type="radio" name="rating" id="rating-31" value="1" />
+                                        <label for="rating-31" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-32" value="2" />
+                                        <label for="rating-32" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-33" value="3" />
+                                        <label for="rating-33" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-34" value="4" />
+                                        <label for="rating-34" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-35" value="5" />
+                                        <label for="rating-35" class="fa fa-star"></label>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Uplaod Photos -->
+                            <div class="uploadButton margin-top-15">
+                                <input class="uploadButton-input" type="file" name="attachments[]"
+                                    accept="image/*, application/pdf" id="upload" multiple />
+                                <label class="uploadButton-button ripple-effect" for="upload">Add Photos</label>
+                                <span class="uploadButton-file-name"></span>
+                            </div>
+                            <!-- Uplaod Photos / End -->
+
+                        </div>
+                        <!-- Subratings Container / End -->
+
+                        <!-- Review Comment -->
+                        <form id="add-comment" class="add-comment">
+                            <fieldset>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Name:</label>
+                                        <input type="text" value="" />
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label>Email:</label>
+                                        <input type="text" value="" />
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label>Review:</label>
+                                    <textarea cols="40" rows="3"></textarea>
+                                </div>
+
+                            </fieldset>
+
+                            <button class="button">Submit Review</button>
+                            <div class="clearfix"></div>
+                        </form>
+
+                    </div>
+                    <!-- Add Review Box / End -->
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4 col-md-4 margin-top-75 sticky">
+                    <!-- Opening Hours -->
+                    <div class="boxed-widget opening-hours margin-top-35">
+                        <div class="listing-badge now-open"></div>
+                        <h3><i class="sl sl-icon-clock"></i>CLASS TIMING</h3>
+                        <ul>
+                            <li>Monday <span>10:00 AM - 11:00 AM</span></li>
+                            <li>Tuesday <span>10:00 AM - 11:00 AM</span></li>
+                            <li>Wednesday <span>10:00 AM - 11:00 AM</span></li>
+                            <li>Thursday <span>10:00 AM - 11:00 AM</span></li>
+                            <li>Friday <span>10:00 AM - 11:00 AM</span></li>
+                            <li>Saturday <span>10:00 AM - 11:00 AM <br> (DOUBDT SESSION) </span></li><br><br>
+                            <li>Sunday <span>HOLIDAY</span></li>
+                        </ul>
+                    </div>
+                    <!-- Opening Hours / End -->
+
+
+                    <!-- Contact -->
+                    <div class="boxed-widget margin-top-35">
+                        <div class="hosted-by-title">
+                            <h4><span>Our Instructor</span> <a href="#">ABHISAR</a></h4>
+                            <a href="#" class="hosted-by-avatar"><img src="{% static 'images/abhi.jpg' %}" alt=""></a>
+
+                        </div>
+                        <ul class="listing-details-sidebar">
+                            <li><i class="sl sl-icon-user"></i> PYTHON DJANGO DEVELOPER</li>
+                            <li><i class="sl sl-icon-graduation"></i> Masters of Computer Applications</li>
+                            <li><i class="fa fa-envelope-o"></i> <a
+                                    href="mailto:abhisar7654@gmail.com">abhisar7654@gmail.com</a></li>
+                        </ul>
+
+                        <ul class="listing-details-sidebar social-profiles">
+                            <li><a href="#" class="facebook-profile"><i class="fa fa-github-square"></i> GITHUB</a></li>
+                            <li><a href="https://www.linkedin.com/in/abhisar-soni-244b7316b/" class="twitter-profile"><i
+                                        class="fa fa-linkedin"></i> LINKEDIN</a></li>
+                        </ul>
+                        <!-- Contact / End-->
+                    </div>
+                    <div class="listing-share margin-top-40 margin-bottom-40 no-border">
+                        <button class="like-button"><span class="like-icon"></span> Bookmark this Course</button>
+                        <span>159 people bookmarked this Course</span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wrapper / End -->
+        <div id="footer">
+            <!-- Main -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-6">
+                        <img class="footer-logo" src="{% static 'images/internmate_transparent.png' %}"
+                            alt="InternMate Logo">
+
+                        <br><br>
+                        <p>InternMate is dedicated to bridging the gap between students and top companies by
+                            offering comprehensive internship opportunities. We provide extensive resources and
+                            personalized guidance to help you kickstart your career and achieve your
+                            professional
+                            goals.</p>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <h4>Helpful Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="#sign-in-dialog" class="popup-with-zoom-anim open-login">Login</a></li>
+                            <li><a href="#sign-in-dialog" class="popup-with-zoom-anim open-register">Sign Up</a>
+                            <li><a href="#">My Account</a></li>
+                        </ul>
+
+                        <ul class="footer-links">
+                            <li><a href="{% url 'faq' %}" target="_blank">FAQ</a></li>
+                            <li><a href="{% url 'contact' %}" target="_blank">Contact</a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-12">
+                        <h4>Contact Us</h4>
+                        <div class="text-widget">
+                            <span>AMRITSAR,PUNJAB</span> <br>
+                            Phone: <span> +91 9877817876 </span><br>
+                            E-Mail:<span> <a href="mailto:internamte2024@gmail.com">internamte2024@gmail.com</a>
+                            </span><br>
+                        </div>
+
+                        <ul class="social-icons margin-top-20">
+                            <li><a class="linkedin" href="https://www.linkedin.com/in/internmate-32b619317" target="_blank"><i
+                                        class="icon-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyrights">© 2024 InternMate. All Rights Reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back To Top Button -->
+        <div id="backtotop"><a href="#"></a></div>
+
+
+        <!-- Scripts
+================================================== -->
+        <script type="text/javascript" src="{% static 'scripts/jquery-3.4.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/jquery-migrate-3.1.0.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/mmenu.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/chosen.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/slick.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/rangeslider.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/magnific-popup.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/waypoints.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/counterup.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/jquery-ui.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/tooltips.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/custom.js' %}"></script>
+
+
+</body>
+
+</html>

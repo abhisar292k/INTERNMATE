@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+
+<head>
+
+    <!-- Basic Page Needs
+================================================== -->
+    <title>INTERNMATE</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- CSS
+================================================== -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/main-color.css' %}" id="colors">
+
+</head>
+<style>
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .icon-box {
+        text-align: center;
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .icon-box i {
+        font-size: 50px;
+        margin-bottom: 20px;
+        color: #D32F2F;
+        transition: transform 0.3s;
+    }
+
+    .icon-box i:hover {
+        transform: scale(1.2);
+    }
+
+    .icon-box h5 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .icon-box p {
+        color: #777;
+    }
+
+    .btn-primary {
+        background-color: #D32F2F;
+        border-color: #D32F2F;
+        padding: 15px 30px;
+        /* Increase padding for larger button */
+        font-size: 18px;
+        /* Increase font size */
+        border-radius: 5px;
+        /* Optional: for slightly rounded corners */
+    }
+
+    .btn-primary:hover {
+        background-color: #A02626;
+        border-color: #A02626;
+        padding: 15px 30px;
+        /* Keep the padding same on hover */
+        font-size: 18px;
+        /* Keep the font size same on hover */
+    }
+
+
+    .typed-words {
+        color: brown;
+        background: white;
+        border-radius: 10px;
+
+
+
+
+    }
+</style>
+
+<body class="transparent-header">
+    <div id="wrapper">
+        <header id="header-container">
+            <div id="header" class="not-sticky">
+                <div class="container">
+                    <div class="left-side">
+                        <div id="logo">
+                            <a href="{% url 'index' %}">
+                                <img src="{% static 'images/internmate_transparent.png' %}" alt="Logo">
+                            </a>
+                            
+                        </div>
+                        <div class="mmenu-trigger">
+                            <button class="hamburger hamburger--collapse" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                        <nav id="navigation" class="style-1">
+							<ul id="responsive">
+								<li><a  href="{% url 'index' %}">Home</a></li>
+								<li><a href="{% url 'internships' %}">Internships</a>
+									<ul>
+										<li><a href="{% url 'fullstackwithpython' %}">Full Stack Web Dev</a></li>
+										<li><a href="{% url 'webdesigning' %}">Web Dev</a></li>
+										<li><a href="{% url 'pythoninternship' %}">Python</a></li>
+										<li><a href="{% url 'javainternship' %}">Java</a></li>
+										<li><a href="{% url 'javascriptinternship' %}">JavaScript</a></li>
+										<li><a href="{% url 'bootstrapinternship' %}">Bootstrap</a></li>
+										<li><a href="{% url 'htmlinternship' %}">HTML</a></li>
+										<li><a href="{% url 'cssinternship' %}">CSS</a></li>
+									</ul>
+								</li>
+								<li><a class="current" href="{% url 'aboutus' %}">About</a></li>
+								<li><a href="{% url 'faq' %}">FAQ</a></li>
+								<li><a href="{% url 'contact' %}">Contact</a></li>
+							</ul>
+						</nav>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="right-side">
+                        <div class="header-widget">
+                            <a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim button border"><i
+                                    class="sl sl-icon-login"></i> Sign In</a>
+                            <a href="{% url 'contact' %}" class="button border with-icon">Contact Us <i
+                                    class="sl sl-icon-envelope-open"></i></a>
+                        </div>
+                    </div>
+                    <!-- Sign In Popup -->
+                    <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+
+                        <div class="small-dialog-header">
+                            <h3>Sign In</h3>
+                        </div>
+
+                        <!--Tabs -->
+                        <div class="sign-in-form style-1">
+
+                            <ul class="tabs-nav">
+                                <li class=""><a href="#tab1">Log In</a></li>
+                                <li><a href="#tab2">Register</a></li>
+                            </ul>
+
+                            <div class="tabs-container alt">
+
+                                <!-- Login -->
+                                <div class="tab-content" id="tab1" style="display: none;">
+                                    <form method="post" class="login">
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="username">Username:
+                                                <i class="im im-icon-Male"></i>
+                                                <input type="text" class="input-text" name="username" id="username"
+                                                    value="" />
+                                            </label>
+                                        </p>
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="password">Password:
+                                                <i class="im im-icon-Lock-2"></i>
+                                                <input class="input-text" type="password" name="password"
+                                                    id="password" />
+                                            </label>
+                                            <span class="lost_password">
+                                                <a href="#">Lost Your Password?</a>
+                                            </span>
+                                        </p>
+
+                                        <div class="form-row">
+                                            <input type="submit" class="button border margin-top-5" name="login"
+                                                value="Login" />
+                                            <div class="checkboxes margin-top-10">
+                                                <input id="remember-me" type="checkbox" name="check">
+                                                <label for="remember-me">Remember Me</label>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                                <!-- Register -->
+                                <div class="tab-content" id="tab2" style="display: none;">
+
+                                    <form method="post" class="register">
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="username2">Username:
+                                                <i class="im im-icon-Male"></i>
+                                                <input type="text" class="input-text" name="username" id="username2"
+                                                    value="" />
+                                            </label>
+                                        </p>
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="email2">Email Address:
+                                                <i class="im im-icon-Mail"></i>
+                                                <input type="text" class="input-text" name="email" id="email2"
+                                                    value="" />
+                                            </label>
+                                        </p>
+                                        <p class="form-row form-row-wide">
+											<label for="phone">Phone Number:
+												<i class="sl sl-icon-phone"></i>
+												<input type="tel" class="input-text" name="phone" id="phone" value="" />
+											</label>
+										</p>
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="password1">Password:
+                                                <i class="im im-icon-Lock-2"></i>
+                                                <input class="input-text" type="password" name="password1"
+                                                    id="password1" />
+                                            </label>
+                                        </p>
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="password2">Repeat Password:
+                                                <i class="im im-icon-Lock-2"></i>
+                                                <input class="input-text" type="password" name="password2"
+                                                    id="password2" />
+                                            </label>
+                                        </p>
+
+                                        <input type="submit" class="button border fw margin-top-10" name="register"
+                                            value="Register" />
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sign In Popup / End -->
+                </div>
+            </div>
+        </header>
+        <!-- Banner
+================================================== -->
+        <div class="main-search-container centered" data-background-image="{% static 'images/python1.jpg' %}">
+            <div class="main-search-inner">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>
+                                Find your Dream Internship in
+                                <!-- Typed words can be configured in script settings at the bottom of this HTML file -->
+                                <span class="typed-words"></span>
+                            </h2>
+                            <h4>Expolore top-rated intersnhsips</h4>
+
+
+                        </div>
+                    </div>
+
+                    <!-- Features Categories -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5 class="highlighted-categories-headline">Or browse featured categories:</h5>
+
+                            <div class="highlighted-categories">
+                                <!-- Box -->
+                                <a href="{% url 'programming' %}" class="highlighted-category">
+                                    <i class="im im-icon-Home"></i>
+                                    <h4>programming</h4>
+                                </a>
+
+                                <!-- Box -->
+                                <a href="{% url 'webdesigning' %}" class="highlighted-category">
+                                    <i class="im im-icon-Hamburger"></i>
+                                    <h4>Web Development</h4>
+                                </a>
+
+                               
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Featured Categories - End -->
+                </div>
+            </div>
+        </div>
+        <br><br><br><br>
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-lg-6 animate__animated animate__fadeInLeft">
+                    <h2>Who We Are and What We Do</h2>
+                    <p>Welcome to InternMate, your gateway to valuable internship opportunities and career growth. We
+                        believe in nurturing the talents of tomorrow by providing comprehensive support and resources
+                        for students and young professionals.</p>
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeInRight">
+                    <img src="{% static 'images/popular-location-01.jpg' %}" alt="InternMate" class="img-fluid rounded">
+
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+
+        <!-- Why Choose Us Section -->
+        <div class="container my-5">
+            <h2 class="text-center mb-4">Why Choose InternMate?</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="icon-box">
+                        <i class="fas fa-briefcase"></i>
+                        <h5>Extensive Internship Listings</h5>
+                        <p>Find the perfect match for your skills and interests.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="icon-box">
+                        <i class="fas fa-book"></i>
+                        <h5>Comprehensive Study Materials</h5>
+                        <p>Enhance your knowledge with our curated resources.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="icon-box">
+                        <i class="fas fa-bullseye"></i>
+                        <h5>Interview Preparation</h5>
+                        <p>Ace your interviews with our preparation guides and mock sessions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="icon-box">
+                        <i class="fas fa-comments"></i>
+                        <h5>Communication Skills Training</h5>
+                        <p>Boost your confidence and soft skills.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="icon-box">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h5>Mentorship and Guidance</h5>
+                        <p>Receive personalized advice from industry experts.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="icon-box">
+                        <i class="fas fa-briefcase"></i>
+                        <h5>Placement Assistant</h5>
+                        <p>Receive guidance and support to land your dream job or internship.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div><br><br><br>
+        <!-- Call to Action Section -->
+        <div class="container my-5 text-center animate__animated animate__fadeInUp">
+            <h2>Get Started Today!</h2>
+            <p>Join InternMate to kickstart your career and gain invaluable experience working on real-world projects.
+                Our dedicated team is here to guide you every step of the way, helping you to achieve your professional
+                goals.</p>
+            <a href="#sign-in-dialog" class="button medium popup-with-zoom-anim" class="btn btn-lg">Join Now</a>
+        </div>
+        <br><br><br>
+        <!-- footer -->
+        <div id="footer">
+            <!-- Main -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-6">
+                        <img class="footer-logo" src="{% static 'images/internmate_transparent.png' %}"
+                            alt="InternMate Logo">
+                        <br><br>
+                        <p>InternMate is dedicated to bridging the gap between students and top companies by
+                            offering comprehensive internship opportunities. We provide extensive resources and
+                            personalized guidance to help you kickstart your career and achieve your professional
+                            goals.</p>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <h4>Helpful Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="#sign-in-dialog" class="popup-with-zoom-anim open-login">Login</a></li>
+                            <li><a href="#sign-in-dialog" class="popup-with-zoom-anim open-register">Sign Up</a>
+                            </li>
+                            <li><a href="#">My Account</a></li>
+                        </ul>
+
+
+                        <ul class="footer-links">
+                            <li><a href="{% url 'faq' %}">FAQ</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-12">
+                        <h4>Contact Us</h4>
+                        <div class="text-widget">
+                            <span>AMRITSAR,PUNJAB</span> <br>
+                            Phone: <span> +91 9877817876 </span><br>
+                            E-Mail:<span> <a href="mailto:internamte2024@gmail.com">internamte2024@gmail.com</a>
+                            </span><br>
+                        </div>
+
+
+                        <ul class="social-icons margin-top-20">
+                            <li><a class="linkedin" href="https://linkedin.com/in/internmate-32b619317"><i class="icon-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyrights">© 2024 InternMate. All Rights Reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Back To Top Button -->
+        <div id="backtotop"><a href="#"></a></div>
+
+
+    </div>
+    <!-- Wrapper / End -->
+
+
+    <!-- Scripts
+================================================== -->
+<script type="text/javascript" src="{% static 'scripts/jquery-3.4.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/jquery-migrate-3.1.0.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/mmenu.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/chosen.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/slick.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/rangeslider.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/magnific-popup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/waypoints.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/counterup.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/jquery-ui.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/tooltips.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/custom.js' %}"></script>
+
+<!-- Leaflet // Docs: https://leafletjs.com/ -->
+<script src="{% static 'scripts/leaflet.min.js' %}"></script>
+
+<!-- Leaflet Maps Scripts -->
+<script src="{% static 'scripts/leaflet-markercluster.min.js' %}"></script>
+<script src="{% static 'scripts/leaflet-gesture-handling.min.js' %}"></script>
+<script src="{% static 'scripts/leaflet-listeo.js' %}"></script>
+
+<!-- Leaflet Geocoder + Search Autocomplete // Docs: https://github.com/perliedman/leaflet-control-geocoder -->
+<script src="{% static 'scripts/leaflet-autocomplete.js' %}"></script>
+<script src="{% static 'scripts/leaflet-control-geocoder.js' %}"></script>
+
+
+
+    <!-- Typed Script -->
+    <script type="text/javascript" src="{% static 'scripts/typed.js' %}"></script>
+
+    <script>
+        var typed = new Typed('.typed-words', {
+            strings: ["Python", " Web-Desiging", " Javascript", "Java"],
+            typeSpeed: 80,
+            backSpeed: 80,
+            backDelay: 4000,
+            startDelay: 1000,
+            loop: true,
+            showCursor: true
+        });
+    </script>
+
+
+    <!-- Style Switcher
+================================================== -->
+<script src="{% static 'scripts/switcher.js' %}"></script>
+
+
+    <div id="style-switcher">
+        <h2>Color Switcher <a href="#"><i class="sl sl-icon-settings"></i></a></h2>
+
+        <div>
+            <ul class="colors" id="color1">
+                <li><a href="#" class="main" title="Main"></a></li>
+                <li><a href="#" class="blue" title="Blue"></a></li>
+                <li><a href="#" class="green" title="Green"></a></li>
+                <li><a href="#" class="orange" title="Orange"></a></li>
+                <li><a href="#" class="navy" title="Navy"></a></li>
+                <li><a href="#" class="yellow" title="Yellow"></a></li>
+                <li><a href="#" class="peach" title="Peach"></a></li>
+                <li><a href="#" class="beige" title="Beige"></a></li>
+                <li><a href="#" class="purple" title="Purple"></a></li>
+                <li><a href="#" class="celadon" title="Celadon"></a></li>
+                <li><a href="#" class="red" title="Red"></a></li>
+                <li><a href="#" class="brown" title="Brown"></a></li>
+                <li><a href="#" class="cherry" title="Cherry"></a></li>
+                <li><a href="#" class="cyan" title="Cyan"></a></li>
+                <li><a href="#" class="gray" title="Gray"></a></li>
+                <li><a href="#" class="olive" title="Olive"></a></li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- Style Switcher / End -->
+
+
+</body>
+
+</html>

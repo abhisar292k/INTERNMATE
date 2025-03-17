@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+<head>
+
+    <!-- Basic Page Needs
+================================================== -->
+    <title>INTERNMATE-PYTHON-INTERNSHIP</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+================================================== -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main-color.css" id="colors">
+
+</head>
+
+<body>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header Container
+================================================== -->
+        <header id="header-container">
+            <div id="header" class="not-sticky">
+                <div class="container">
+                    <div class="left-side">
+                        <div id="logo">
+                            <a href="{% url 'index' %}"> <img src="{% static 'images/internmate_transparent.png' %}" alt="Logo"></a>
+                        </div>
+                        <div class="mmenu-trigger">
+                            <button class="hamburger hamburger--collapse" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                        <nav id="navigation" class="style-1">
+                            <ul id="responsive">
+                                <li><a class="current" href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'internships' %}">Internships</a>
+                                    <ul>
+                                        <li><a href="{% url 'fullstackwithpython' %}">Full Stack Web Dev</a></li>
+                                        <li><a href="{% url 'webdesigning' %}">Web Dev</a></li>
+                                        <li><a href="{% url 'pythoninternship' %}">Python</a></li>
+                                        <li><a href="{% url 'javainternship' %}">Java</a></li>
+                                        <li><a href="{% url 'javascriptinternship' %}">JavaScript</a></li>
+                                        <li><a href="{% url 'bootstrapinternship' %}">Bootstrap</a></li>
+                                        <li><a href="{% url 'htmlinternship' %}">HTML</a></li>
+                                        <li><a href="{% url 'cssinternship' %}">CSS</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{% url 'aboutus' %}">About</a></li>
+                                <li><a href="{% url 'faq' %}">FAQ</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
+                            </ul>
+                        </nav>
+                        
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="right-side">
+                        <div class="header-widget">
+                            <a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim button border"><i
+                                    class="sl sl-icon-login"></i> Sign In</a>
+                            <a href="contact.html" class="button border with-icon">Contact Us <i
+                                    class="sl sl-icon-envelope-open"></i></a>
+                        </div>
+                    </div>
+                    <!-- Sign In Popup -->
+                    <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+
+                        <div class="small-dialog-header">
+                            <h3>Sign In</h3>
+                        </div>
+
+                        <!--Tabs -->
+                        <div class="sign-in-form style-1">
+
+                            <ul class="tabs-nav">
+                                <li class=""><a href="#tab1">Log In</a></li>
+                                <li><a href="#tab2">Register</a></li>
+                            </ul>
+
+                            <div class="tabs-container alt">
+
+                                <!-- Login -->
+                                <div class="tab-content" id="tab1" style="display: none;">
+                                    <form method="post" class="login">
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="username">Username:
+                                                <i class="im im-icon-Male"></i>
+                                                <input type="text" class="input-text" name="username" id="username"
+                                                    value="" />
+                                            </label>
+                                        </p>
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="password">Password:
+                                                <i class="im im-icon-Lock-2"></i>
+                                                <input class="input-text" type="password" name="password"
+                                                    id="password" />
+                                            </label>
+                                            <span class="lost_password">
+                                                <a href="#">Lost Your Password?</a>
+                                            </span>
+                                        </p>
+
+                                        <div class="form-row">
+                                            <input type="submit" class="button border margin-top-5" name="login"
+                                                value="Login" />
+                                            <div class="checkboxes margin-top-10">
+                                                <input id="remember-me" type="checkbox" name="check">
+                                                <label for="remember-me">Remember Me</label>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                                <!-- Register -->
+                                <div class="tab-content" id="tab2" style="display: none;">
+
+                                    <form method="post" class="register">
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="username2">Username:
+                                                <i class="im im-icon-Male"></i>
+                                                <input type="text" class="input-text" name="username" id="username2"
+                                                    value="" />
+                                            </label>
+                                        </p>
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="email2">Email Address:
+                                                <i class="im im-icon-Mail"></i>
+                                                <input type="text" class="input-text" name="email" id="email2"
+                                                    value="" />
+                                            </label>
+                                        </p>
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="password1">Password:
+                                                <i class="im im-icon-Lock-2"></i>
+                                                <input class="input-text" type="password" name="password1"
+                                                    id="password1" />
+                                            </label>
+                                        </p>
+
+                                        <p class="form-row form-row-wide">
+                                            <label for="password2">Repeat Password:
+                                                <i class="im im-icon-Lock-2"></i>
+                                                <input class="input-text" type="password" name="password2"
+                                                    id="password2" />
+                                            </label>
+                                        </p>
+
+                                        <input type="submit" class="button border fw margin-top-10" name="register"
+                                            value="Register" />
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sign In Popup / End -->
+                </div>
+            </div>
+        </header>
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
+
+        <!-- Slider
+================================================== -->
+        <div class="listing-slider mfp-gallery-container margin-bottom-0">
+            <a href="images/python (1).jpg" data-background-image="images/hr.jpg" class="item mfp-gallery"
+                title="Title 1"></a>
+            <a href="images/single-listing-05b.jpg" data-background-image="images/hr.jpg" class="item mfp-gallery"
+                title="Title 3"></a>
+            <a href="images/single-listing-05c.jpg" data-background-image="images/hr.jpg" class="item mfp-gallery"
+                title="Title 2"></a>
+            <a href="images/single-listing-05d.jpg" data-background-image="images/hr.jpg" class="item mfp-gallery"
+                title="Title 4"></a>
+        </div>
+
+
+        <!-- Content
+================================================== -->
+        <div class="container">
+            <div class="row sticky-wrapper">
+                <div class="col-lg-8 col-md-8 padding-right-30">
+                    <!-- Titlebar -->
+                    <div id="titlebar" class="listing-titlebar">
+                        <div class="listing-titlebar-title">
+                            <h2>HUMAN RESOURCES<span class="listing-tag">Management</span></h2>
+                            <div class="star-rating" data-rating="4.5">
+                                <div class="rating-counter"><a href="#listing-reviews">(12 reviews)</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Listing Nav -->
+                    <div id="listing-nav" class="listing-nav-container">
+                        <ul class="listing-nav">
+                            <li><a href="#listing-overview" class="active">Overview</a></li>
+                            <li><a href="#listing-pricing-list">Pricing</a></li>
+                            <li><a href="#Course-content">Course content</a></li>
+                            <li><a href="#listing-reviews">Reviews</a></li>
+                            <li><a href="#add-review">Add Review</a></li>
+                        </ul>
+                    </div>
+                    <!-- Overview -->
+                    <div id="listing-overview" class="listing-section">
+                        <!-- Description -->
+                        <h3 class="listing-desc-headline margin-top-30 margin-bottom-30">Overview</h3>
+                        <p>
+                            Human Resources (HR) is a crucial department in any organization that focuses on the
+                            recruitment,
+                            management, and direction of people who work in an organization. HR is concerned with the
+                            effective
+                            management of people to ensure that they contribute to the overall success of the business.
+                        </p>
+                        <!-- Listing Contacts -->
+                        <div class="listing-links-container">
+                            <ul class="listing-links contact-links">
+                                <li><a href="tel:12-345-678" class="listing-links"><i class="fa fa-phone"></i> +12 345
+                                        6578</a></li>
+                                <li><a href="mailto:mail@example.com" class="listing-links"><i
+                                            class="fa fa-envelope-o"></i> mail@example.com</a></li>
+                                <li><a href="#" target="_blank" class="listing-links"><i class="fa fa-link"></i>
+                                        www.example.com</a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                            <ul class="listing-links">
+                                <li><a href="#" target="_blank" class="listing-links-fb"><i
+                                            class="fa fa-linkedin-square"></i> LINKEDIN</a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- Pricing -->
+                    <div id="listing-pricing-list" class="listing-section">
+                        <h3 class="listing-desc-headline margin-top-70 margin-bottom-30">Pricing</h3>
+                        <div class="pricing-list-container">
+                            <ul>
+                                <li>
+                                    <h5>1-Month Internship</h5>
+                                    <span>2000 INR</span>
+                                </li>
+                                <li>
+                                    <h5>45-Day Internship</h5>
+                                    <span>3500 INR</span>
+                                </li>
+                                <li>
+                                    <h5>3-Month Internship</h5>
+                                    <span>5500 INR</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="container" id="Course-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="headline margin-top-70 margin-bottom-30">Human Resources Course Content</h4>
+                                <table class="basic-table">
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Description</th>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="S.No">1</td>
+                                        <td data-label="Description">Introduction to Human Resources</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="S.No">2</td>
+                                        <td data-label="Description">Recruitment and Selection</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="S.No">3</td>
+                                        <td data-label="Description">Employee Onboarding</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="S.No">4</td>
+                                        <td data-label="Description">Performance Management</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="S.No">5</td>
+                                        <td data-label="Description">Training and Development</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="S.No">6</td>
+                                        <td data-label="Description">Compensation and Benefits</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="S.No">7</td>
+                                        <td data-label="Description">Employee Relations</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="S.No">8</td>
+                                        <td data-label="Description">Labor Law and Compliance</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="S.No">9</td>
+                                        <td data-label="Description">HR Metrics and Analytics</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="S.No">10</td>
+                                        <td data-label="Description">Health, Safety, and Wellness</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="S.No">11</td>
+                                        <td data-label="Description">Diversity and Inclusion</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="S.No">12</td>
+                                        <td data-label="Description">Strategic HR Management</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Reviews -->
+                    <div id="listing-reviews" class="listing-section">
+                        <h3 class="listing-desc-headline margin-top-75 margin-bottom-20">Reviews <span>(12)</span></h3>
+
+                        <!-- Rating Overview -->
+                        <div class="rating-overview">
+                            <div class="rating-overview-box">
+                                <span class="rating-overview-box-total">4.2</span>
+                                <span class="rating-overview-box-percent">out of 5.0</span>
+                                <div class="star-rating" data-rating="5"></div>
+                            </div>
+
+                            <div class="rating-bars">
+                                <div class="rating-bars-item">
+                                    <span class="rating-bars-name">Value for Money <i class="tip"
+                                            data-tip-content="Overall experience received for the amount spent"></i></span>
+                                    <span class="rating-bars-inner">
+                                        <span class="rating-bars-rating" data-rating="4.8">
+                                            <span class="rating-bars-rating-inner"></span>
+                                        </span>
+                                        <strong>4.8</strong>
+                                    </span>
+                                </div>
+                                <div class="rating-bars-item">
+                                    <span class="rating-bars-name">Instructor Knowledge<i class="tip"
+                                            data-tip-content="The knowledge of instructor"></i></span>
+                                    <span class="rating-bars-inner">
+                                        <span class="rating-bars-rating" data-rating="4.0">
+                                            <span class="rating-bars-rating-inner"></span>
+                                        </span>
+                                        <strong>4.5</strong>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Rating Overview / End -->
+
+                        <div class="clearfix"></div>
+
+                        <!-- Reviews -->
+                        <section class="comments listing-reviews">
+                            <ul>
+                                <li>
+                                    <div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /></div>
+                                    <div class="comment-content">
+                                        <div class="arrow-comment"></div>
+                                        <div class="comment-by">Amit Sharma <i class="tip" data-tip-content="Person who left this review actually was a customer"></i>
+                                            <span class="date">April 2024</span>
+                                            <div class="star-rating" data-rating="5"></div>
+                                        </div>
+                                        <p>I had a great experience learning Human Resources at InternMate. The course content was thorough, and Kamakshi Mam was very knowledgeable.</p>
+                                        <a href="#" class="rate-review"><i class="sl sl-icon-like"></i> Helpful Review <span>10</span></a>
+                                    </div>
+                                </li>
+                        
+                                <li>
+                                    <div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /></div>
+                                    <div class="comment-content">
+                                        <div class="arrow-comment"></div>
+                                        <div class="comment-by">Priya Singh <span class="date">May 2024</span>
+                                            <div class="star-rating" data-rating="4"></div>
+                                        </div>
+                                        <p>The Human Resources course was very well structured. Kamakshi Mam explained concepts clearly, and I feel much more confident in my HR skills now. Highly recommend!</p>
+                                        <a href="#" class="rate-review"><i class="sl sl-icon-like"></i> Helpful Review <span>8</span></a>
+                                    </div>
+                                </li>
+                        
+                                <li>
+                                    <div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /></div>
+                                    <div class="comment-content">
+                                        <div class="arrow-comment"></div>
+                                        <div class="comment-by">Rahul Verma <span class="date">May 2024</span>
+                                            <div class="star-rating" data-rating="4.5"></div>
+                                        </div>
+                                        <p>InternMate provided an excellent Human Resources training. The practical sessions led by Kamakshi Mam were especially useful.</p>
+                                        <a href="#" class="rate-review"><i class="sl sl-icon-like"></i> Helpful Review <span>6</span></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
+                        
+
+                        <!-- Pagination -->
+                        <div class="clearfix"></div>
+                        <div class="pagination-container margin-top-30">
+                            <nav class="pagination">
+                                <ul>
+                                    <li><a href="#" class="current-page">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#"><i class="sl sl-icon-arrow-right"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="clearfix"></div>
+                        <!-- Pagination / End -->
+                    </div>
+
+                    <!-- Add Review Box -->
+                    <!-- Add Review Box -->
+                    <div id="add-review" class="add-review-box">
+
+                        <!-- Add Review -->
+                        <h3 class="listing-desc-headline margin-bottom-10">Add Review</h3>
+                        <p class="comment-notes">Your email address will not be published.</p>
+
+                        <!-- Subratings Container -->
+                        <div class="sub-ratings-container">
+
+                            <!-- Subrating #1 -->
+                            <div class="add-sub-rating">
+                                <div class="sub-rating-title">Service <i class="tip"
+                                        data-tip-content="Quality of customer service and attitude to work with you"></i>
+                                </div>
+                                <div class="sub-rating-stars">
+                                    <!-- Leave Rating -->
+                                    <div class="clearfix"></div>
+                                    <form class="leave-rating">
+                                        <input type="radio" name="rating" id="rating-1" value="1" />
+                                        <label for="rating-1" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-2" value="2" />
+                                        <label for="rating-2" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-3" value="3" />
+                                        <label for="rating-3" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-4" value="4" />
+                                        <label for="rating-4" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-5" value="5" />
+                                        <label for="rating-5" class="fa fa-star"></label>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Subrating #2 -->
+                            <div class="add-sub-rating">
+                                <div class="sub-rating-title">Value for Money <i class="tip"
+                                        data-tip-content="Overall experience received for the amount spent"></i></div>
+                                <div class="sub-rating-stars">
+                                    <!-- Leave Rating -->
+                                    <div class="clearfix"></div>
+                                    <form class="leave-rating">
+                                        <input type="radio" name="rating" id="rating-11" value="1" />
+                                        <label for="rating-11" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-12" value="2" />
+                                        <label for="rating-12" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-13" value="3" />
+                                        <label for="rating-13" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-14" value="4" />
+                                        <label for="rating-14" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-15" value="5" />
+                                        <label for="rating-15" class="fa fa-star"></label>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Subrating #4 -->
+                            <div class="add-sub-rating">
+                                <div class="sub-rating-title">Instructor knowledge <i class="tip"
+                                        data-tip-content="The physical condition of the business"></i></div>
+                                <div class="sub-rating-stars">
+                                    <!-- Leave Rating -->
+                                    <div class="clearfix"></div>
+                                    <form class="leave-rating">
+                                        <input type="radio" name="rating" id="rating-31" value="1" />
+                                        <label for="rating-31" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-32" value="2" />
+                                        <label for="rating-32" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-33" value="3" />
+                                        <label for="rating-33" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-34" value="4" />
+                                        <label for="rating-34" class="fa fa-star"></label>
+                                        <input type="radio" name="rating" id="rating-35" value="5" />
+                                        <label for="rating-35" class="fa fa-star"></label>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Uplaod Photos -->
+                            <div class="uploadButton margin-top-15">
+                                <input class="uploadButton-input" type="file" name="attachments[]"
+                                    accept="image/*, application/pdf" id="upload" multiple />
+                                <label class="uploadButton-button ripple-effect" for="upload">Add Photos</label>
+                                <span class="uploadButton-file-name"></span>
+                            </div>
+                            <!-- Uplaod Photos / End -->
+
+                        </div>
+                        <!-- Subratings Container / End -->
+
+                        <!-- Review Comment -->
+                        <form id="add-comment" class="add-comment">
+                            <fieldset>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Name:</label>
+                                        <input type="text" value="" />
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label>Email:</label>
+                                        <input type="text" value="" />
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label>Review:</label>
+                                    <textarea cols="40" rows="3"></textarea>
+                                </div>
+
+                            </fieldset>
+
+                            <button class="button">Submit Review</button>
+                            <div class="clearfix"></div>
+                        </form>
+
+                    </div>
+                    <!-- Add Review Box / End -->
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4 col-md-4 margin-top-75 sticky">
+                    <!-- Opening Hours -->
+                    <div class="boxed-widget opening-hours margin-top-35">
+                        <div class="listing-badge now-open"></div>
+                        <h3><i class="sl sl-icon-clock"></i>CLASS TIMING</h3>
+                        <ul>
+                            <li>Monday <span>10:00 AM - 11:00 AM</span></li>
+                            <li>Tuesday <span>10:00 AM - 11:00 AM</span></li>
+                            <li>Wednesday <span>10:00 AM - 11:00 AM</span></li>
+                            <li>Thursday <span>10:00 AM - 11:00 AM</span></li>
+                            <li>Friday <span>10:00 AM - 11:00 AM</span></li>
+                            <li>Saturday <span>10:00 AM - 11:00 AM <br> (DOUBDT SESSION) </span></li><br><br>
+                            <li>Sunday <span>HOLIDAY</span></li>
+                        </ul>
+                    </div>
+                    <!-- Opening Hours / End -->
+
+
+                    <!-- Contact -->
+                    <div class="boxed-widget margin-top-35">
+                        <div class="hosted-by-title">
+                            <h4><span>Our Instructor</span> <a href="#">KAMAKSHI CHAWALA</a></h4>
+                            <a href="#" class="hosted-by-avatar"><img src="images/kamakshi.png" alt=""></a>
+                        </div>
+                        <ul class="listing-details-sidebar">
+                            <li><i class="sl sl-icon-user"></i>EX-QUALITY ANALYST AT (TCS)</li>
+                            <li><i class="sl sl-icon-graduation"></i> Masters of Computer Applications</li>
+                            <li><i class="fa fa-envelope-o"></i> <a
+                                    href="mailto:abhisar7654@gmail.com">kamalshichawla@gmail.com</a></li>
+                        </ul>
+
+                        <ul class="listing-details-sidebar social-profiles">
+                            <li><a href="#" class="facebook-profile"><i class="fa fa-github-square"></i> GITHUB</a></li>
+                            <li><a href="#" class="twitter-profile"><i class="fa fa-linkedin"></i> LINKEDIN</a></li>
+                        </ul>
+
+                        <!-- Reply to review popup -->
+                        <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+                            <div class="small-dialog-header">
+                                <h3>Send Message</h3>
+                            </div>
+                            <div class="message-reply margin-top-0">
+                                <textarea cols="40" rows="3" placeholder="Your message to ABHISAR"></textarea>
+                                <button class="button">Send Message</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Contact / End-->
+
+
+                    <!-- Share / Like -->
+                    <div class="listing-share margin-top-40 margin-bottom-40 no-border">
+                        <button class="like-button"><span class="like-icon"></span> Bookmark this Course</button>
+                        <span>159 people bookmarked this Course</span>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+                <div id="footer">
+                    <!-- Main -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-6">
+                                <img class="footer-logo" src="images/internmate_transparent.png" alt="InternMate Logo">
+                                <br><br>
+                                <p>InternMate is dedicated to bridging the gap between students and top
+                                    companies by
+                                    offering comprehensive internship opportunities. We provide extensive
+                                    resources and
+                                    personalized guidance to help you kickstart your career and achieve your
+                                    professional
+                                    goals.</p>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6">
+                                <h4>Helpful Links</h4>
+                                <ul class="footer-links">
+                                    <li><a href="#">Login</a></li>
+                                    <li><a href="#">Sign Up</a></li>
+                                    <li><a href="#">My Account</a></li>
+                                </ul>
+
+                                <ul class="footer-links">
+                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="col-md-3 col-sm-12">
+                                <h4>Contact Us</h4>
+                                <div class="text-widget">
+                                    <span>AMRITSAR,PUNJAB</span> <br>
+                                    Phone: <span> +91 9877817876 </span><br>
+                                    E-Mail:<span> <a href="mailto:internamte2024@gmail.com">internamte2024@gmail.com</a> </span><br>
+                                </div>
+
+                                <ul class="social-icons margin-top-20">
+                                    <li><a class="linkedin" href="#"><i class="icon-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Copyright -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyrights">© 2024 InternMate. All Rights Reserved.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer / End -->
+
+
+                <!-- Back To Top Button -->
+                <div id="backtotop"><a href="#"></a></div>
+
+                <!-- Booking Sticky Footer -->
+                
+
+
+            </div>
+            <!-- Wrapper / End -->
+
+
+            <!-- Scripts
+================================================== -->
+            <script type="text/javascript" src="scripts/jquery-3.4.1.min.js"></script>
+            <script type="text/javascript" src="scripts/jquery-migrate-3.1.0.min.js"></script>
+            <script type="text/javascript" src="scripts/mmenu.min.js"></script>
+            <script type="text/javascript" src="scripts/chosen.min.js"></script>
+            <script type="text/javascript" src="scripts/slick.min.js"></script>
+            <script type="text/javascript" src="scripts/rangeslider.min.js"></script>
+            <script type="text/javascript" src="scripts/magnific-popup.min.js"></script>
+            <script type="text/javascript" src="scripts/waypoints.min.js"></script>
+            <script type="text/javascript" src="scripts/counterup.min.js"></script>
+            <script type="text/javascript" src="scripts/jquery-ui.min.js"></script>
+            <script type="text/javascript" src="scripts/tooltips.min.js"></script>
+            <script type="text/javascript" src="scripts/custom.js"></script>
+
+            <!-- Maps -->
+            <script type="text/javascript"
+                src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script>
+            <script type="text/javascript" src="scripts/infobox.min.js"></script>
+            <script type="text/javascript" src="scripts/markerclusterer.js"></script>
+            <script type="text/javascript" src="scripts/maps.js"></script>
+
+            <!-- Booking Widget - Quantity Buttons -->
+            <script src="scripts/quantityButtons.js"></script>
+
+            <!-- Date Range Picker - docs: http://www.daterangepicker.com/ -->
+            <script src="scripts/moment.min.js"></script>
+            <script src="scripts/daterangepicker.js"></script>
+            <script>
+                // Calendar Init
+                $(function () {
+                    $('#date-picker').daterangepicker({
+                        "opens": "left",
+                        singleDatePicker: true,
+
+                        // Disabling Date Ranges
+                        isInvalidDate: function (date) {
+                            // Disabling Date Range
+                            var disabled_start = moment('09/02/2018', 'MM/DD/YYYY');
+                            var disabled_end = moment('09/06/2018', 'MM/DD/YYYY');
+                            return date.isAfter(disabled_start) && date.isBefore(disabled_end);
+
+                            // Disabling Single Day
+                            // if (date.format('MM/DD/YYYY') == '08/08/2018') {
+                            //     return true; 
+                            // }
+                        }
+                    });
+                });
+
+                // Calendar animation
+                $('#date-picker').on('showCalendar.daterangepicker', function (ev, picker) {
+                    $('.daterangepicker').addClass('calendar-animated');
+                });
+                $('#date-picker').on('show.daterangepicker', function (ev, picker) {
+                    $('.daterangepicker').addClass('calendar-visible');
+                    $('.daterangepicker').removeClass('calendar-hidden');
+                });
+                $('#date-picker').on('hide.daterangepicker', function (ev, picker) {
+                    $('.daterangepicker').removeClass('calendar-visible');
+                    $('.daterangepicker').addClass('calendar-hidden');
+                });
+            </script>
+
+
+            <!-- Replacing dropdown placeholder with selected time slot -->
+            <script>
+                $(".time-slot").each(function () {
+                    var timeSlot = $(this);
+                    $(this).find('input').on('change', function () {
+                        var timeSlotVal = timeSlot.find('strong').text();
+
+                        $('.panel-dropdown.time-slots-dropdown a').html(timeSlotVal);
+                        $('.panel-dropdown').removeClass('active');
+                    });
+                });
+            </script>
+
+
+            <!-- Style Switcher
+================================================== -->
+            <script src="scripts/switcher.js"></script>
+
+            <div id="style-switcher">
+                <h2>Color Switcher <a href="#"><i class="sl sl-icon-settings"></i></a></h2>
+
+                <div>
+                    <ul class="colors" id="color1">
+                        <li><a href="#" class="main" title="Main"></a></li>
+                        <li><a href="#" class="blue" title="Blue"></a></li>
+                        <li><a href="#" class="green" title="Green"></a></li>
+                        <li><a href="#" class="orange" title="Orange"></a></li>
+                        <li><a href="#" class="navy" title="Navy"></a></li>
+                        <li><a href="#" class="yellow" title="Yellow"></a></li>
+                        <li><a href="#" class="peach" title="Peach"></a></li>
+                        <li><a href="#" class="beige" title="Beige"></a></li>
+                        <li><a href="#" class="purple" title="Purple"></a></li>
+                        <li><a href="#" class="celadon" title="Celadon"></a></li>
+                        <li><a href="#" class="red" title="Red"></a></li>
+                        <li><a href="#" class="brown" title="Brown"></a></li>
+                        <li><a href="#" class="cherry" title="Cherry"></a></li>
+                        <li><a href="#" class="cyan" title="Cyan"></a></li>
+                        <li><a href="#" class="gray" title="Gray"></a></li>
+                        <li><a href="#" class="olive" title="Olive"></a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- Style Switcher / End -->
+
+
+</body>
+
+</html>

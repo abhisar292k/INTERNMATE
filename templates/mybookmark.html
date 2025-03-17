@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<head>
+
+	<!-- Basic Page Needs
+================================================== -->
+	<title>INTERNMATE</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+================================================== -->
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main-color.css' %}" id="colors">
+
+</head>
+
+<body>
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header Container
+================================================== -->
+<header id="header-container" class="fixed fullwidth dashboard">
+	
+	<!-- Header -->
+	<div id="header" class="not-sticky">
+		<div class="container">
+
+			<!-- Left Side Content -->
+			<div class="left-side">
+
+				<!-- Logo -->
+				<div id="logo">
+					<a href="{% url 'index' %}"><img src="{% static 'images/internmate_transparent.png' %}" alt=""></a>
+					<a href="{% url 'index' %}" class="dashboard-logo"><img src="{% static 'images/internmate_transparent.png' %}" alt=""></a>
+				</div>
+
+				<!-- Mobile Navigation -->
+				<div class="mmenu-trigger">
+					<button class="hamburger hamburger--collapse" type="button">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+				</div>
+
+				<!-- Main Navigation -->
+				<nav id="navigation" class="style-1">
+					<ul id="responsive">
+						<li><a href="{% url 'index' %}">Home</a></li>
+						<li><a href="{% url 'internships' %}">Internships</a>
+							<ul>
+								<li><a href="{% url 'fullstackwithpython' %}">Full Stack Web Dev</a></li>
+								<li><a href="{% url 'webdesigning' %}">Web Dev</a></li>
+								<li><a href="{% url 'pythoninternship' %}">Python</a></li>
+								<li><a href="{% url 'javainternship' %}">Java</a></li>
+								<li><a href="{% url 'javascriptinternship' %}">JavaScript</a></li>
+								<li><a href="{% url 'bootstrapinternship' %}">Bootstrap</a></li>
+								<li><a href="{% url 'htmlinternship' %}">HTML</a></li>
+								<li><a href="{% url 'cssinternship' %}">CSS</a></li>
+							</ul>
+						</li>
+						<li><a href="{% url 'aboutus' %}">About</a></li>
+						<li><a href="{% url 'faq' %}">FAQ</a></li>
+						<li><a href="{% url 'contact' %}">Contact</a></li>
+					</ul>
+				</nav>
+				<div class="clearfix"></div>
+				<!-- Main Navigation / End -->
+
+			</div>
+			<!-- Left Side Content / End -->
+
+			<!-- Right Side Content / End -->
+			<div class="right-side">
+				<!-- Header Widget -->
+				<div class="header-widget">
+
+					<!-- User Menu -->
+					<div class="user-menu">
+						<div class="user-name">
+							<span><img src="{% static 'images/abhi.jpg' %}" alt=""></span>
+							Hi, ABHISAR!
+						</div>
+
+						<ul>
+							<li><a href="{% url 'user_profile' %}"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
+							<li><a href="{% url 'index' %}"><i class="sl sl-icon-power"></i> Logout</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- Header Widget / End -->
+			</div>
+			<!-- Right Side Content / End -->
+
+		</div>
+	</div>
+	<!-- Header / End -->
+
+</header>
+		<div class="clearfix"></div>
+		<!-- Header Container / End -->
+
+
+		<!-- Dashboard -->
+		<div id="dashboard">
+
+		<!-- Navigation
+	================================================== -->
+	
+			<!-- Responsive Navigation Trigger -->
+			<a href="#" class="dashboard-responsive-nav-trigger"><i class="fa fa-reorder"></i> Dashboard Navigation</a>
+	
+			<div class="dashboard-nav">
+				<div class="dashboard-nav-inner">
+	
+					<ul data-submenu-title="Main">
+						<li><a href="{% url 'user_profile' %}"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
+					</ul>
+	
+					<ul data-submenu-title="Listings">
+						<li class="active"><a href="{% url 'mybookmark' %}"><i class="sl sl-icon-heart"></i> Bookmarks</a></li>
+					</ul>
+	
+					<ul data-submenu-title="Account">
+						<li><a href="{% url 'user_profile' %}"><i class="sl sl-icon-user"></i> My Profile</a></li>
+						<li><a href="{% url 'index' %}"><i class="sl sl-icon-power"></i> Logout</a></li>
+					</ul>
+	
+				</div>
+			</div>
+
+
+			<!-- Content
+	================================================== -->
+			<div class="dashboard-content">
+
+				<!-- Titlebar -->
+				<div id="titlebar">
+					<div class="row">
+						<div class="col-md-12">
+							<h2>My Bookmarked</h2>
+							<!-- Breadcrumbs -->
+							<nav id="breadcrumbs">
+								<ul>
+									<li><a href="#">Home</a></li>
+									<li><a href="#">Dashboard</a></li>
+									<li>My Bookmarked</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+
+					<!-- Listings -->
+					<div class="col-lg-12 col-md-12">
+						<div class="dashboard-list-box margin-top-0">
+							<h4>Bookmarked Courses</h4>
+							<ul>
+					
+								<!-- Listing Item -->
+								<li>
+									<div class="list-box-listing">
+										<div class="list-box-listing-img"><img src="{% static 'images/javascript-logo-svgrepo-com.png' %}" alt="JavaScript Logo"></div>
+										<div class="list-box-listing-content">
+											<div class="inner">
+												<h3>JAVA SCRIPT<i class="verified-icon"></i></h3>
+												<div class="star-rating" data-rating="4.9">
+													<div class="rating-counter">(17 reviews)</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="buttons-to-right">
+										<a href="#" class="button gray"><i class="sl sl-icon-close"></i> Remove from Bookmarked</a>
+									</div>
+								</li>
+								<!-- Listing Item / End -->
+					
+								<!-- Listing Item -->
+								<li>
+									<div class="list-box-listing">
+										<div class="list-box-listing-img"><img src="{% static 'images/django-icon-svgrepo-com.png' %}" alt="Django Icon"></div>
+										<div class="list-box-listing-content">
+											<div class="inner">
+												<h3>PYTHON DJANGO<i class="verified-icon"></i></h3>
+												<div class="star-rating" data-rating="5.0">
+													<div class="rating-counter">(31 reviews)</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="buttons-to-right">
+										<a href="#" class="button gray"><i class="sl sl-icon-close"></i> Remove from Bookmarked</a>
+									</div>
+								</li>
+								<!-- Listing Item / End -->
+					
+								<!-- Listing Item -->
+								<li>
+									<div class="list-box-listing">
+										<div class="list-box-listing-img"><img src="{% static 'images/jquery-1-logo-svgrepo-com.png' %}" alt="jQuery Logo"></div>
+										<div class="list-box-listing-content">
+											<div class="inner">
+												<h3>Web Designing with jQuery</h3>
+												<div class="star-rating" data-rating="4.5">
+													<div class="rating-counter">(46 reviews)</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="buttons-to-right">
+										<a href="#" class="button gray"><i class="sl sl-icon-close"></i> Remove from Bookmarked</a>
+									</div>
+								</li>
+								<!-- Listing Item / End -->
+					
+								<!-- Listing Item -->
+								<li>
+									<div class="list-box-listing">
+										<div class="list-box-listing-img"><img src="{% static 'images/download.png' %}" alt="Download Image"></div>
+										<div class="list-box-listing-content">
+											<div class="inner">
+												<h3>FULL STACK WITH PYTHON</h3>
+												<div class="star-rating" data-rating="5.0">
+													<div class="rating-counter">(31 reviews)</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="buttons-to-right">
+										<a href="#" class="button gray"><i class="sl sl-icon-close"></i> Remove from Bookmarked</a>
+									</div>
+								</li>
+								<!-- Listing Item / End -->
+					
+							</ul>
+						</div>
+					</div>
+					
+
+
+					<!-- Copyrights -->
+					<div class="col-md-12">
+						<div class="copyrights">© 2024 InternMate. All Rights Reserved.</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- Content / End -->
+
+
+		</div>
+		<!-- Dashboard / End -->
+
+
+	</div>
+	<!-- Wrapper / End -->
+
+
+	<!-- Scripts
+================================================== -->
+	<script type="text/javascript" src="{% static 'scripts/jquery-3.4.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/jquery-migrate-3.1.0.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/mmenu.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/chosen.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/slick.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/rangeslider.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/magnific-popup.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/waypoints.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/counterup.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/jquery-ui.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/tooltips.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/custom.js' %}"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Page Needs -->
+    <title>InternMate - Internships</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main-color.css' %}" id="colors">
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
+</head>
+
+<body>
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header Container -->
+        <header id="header-container">
+            <div id="header">
+                <div class="container">
+                    <div class="left-side">
+                        <div id="logo">
+                            <a href="{% url 'index' %}"> <img src="{% static 'images/internmate_transparent.png' %}"
+                                    alt="Logo"></a>
+                        </div>
+                        <div class="mmenu-trigger">
+                            <button class="hamburger hamburger--collapse" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div>
+                        <nav id="navigation" class="style-1">
+                            <ul id="responsive">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a class="current" href="{% url 'internships' %}">Internships</a>
+                                    <ul>
+                                        <li><a href="{% url 'fullstackwithpython' %}">Full Stack Web Dev</a></li>
+                                        <li><a href="{% url 'webdesigning' %}">Web Dev</a></li>
+                                        <li><a href="{% url 'pythoninternship' %}">Python</a></li>
+                                        <li><a href="{% url 'javainternship' %}">Java</a></li>
+                                        <li><a href="{% url 'javascriptinternship' %}">JavaScript</a></li>
+                                        <li><a href="{% url 'bootstrapinternship' %}">Bootstrap</a></li>
+                                        <li><a href="{% url 'htmlinternship' %}">HTML</a></li>
+                                        <li><a href="{% url 'cssinternship' %}">CSS</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{% url 'aboutus' %}">About</a></li>
+                                <li><a href="{% url 'faq' %}">FAQ</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="right-side">
+                        <div class="header-widget">
+                            <a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim button border"><i
+                                    class="sl sl-icon-login"></i> Sign In</a>
+                            <a href="{% url 'contact' %}" class="button border with-icon">Contact Us <i
+                                    class="sl sl-icon-envelope-open"></i></a>
+                        </div>
+                    </div>
+                    <!-- Sign In Popup -->
+                    <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+                        <div class="small-dialog-header">
+                            <h3>Sign In</h3>
+                        </div>
+                        <!--Tabs -->
+                        <div class="sign-in-form style-1">
+                            <ul class="tabs-nav">
+                                <li class=""><a href="#tab1">Log In</a></li>
+                                <li><a href="#tab2">Register</a></li>
+                            </ul>
+                            <div class="tabs-container alt">
+                                <!-- Login -->
+                                <div class="tab-content" id="tab1" style="display: none;">
+                                    <form method="post" class="login">
+                                        <p class="form-row form-row-wide">
+                                            <label for="username">Username:
+                                                <i class="im im-icon-Male"></i>
+                                                <input type="text" class="input-text" name="username" id="username"
+                                                    value="" />
+                                            </label>
+                                        </p>
+                                        <p class="form-row form-row-wide">
+                                            <label for="password">Password:
+                                                <i class="im im-icon-Lock-2"></i>
+                                                <input class="input-text" type="password" name="password"
+                                                    id="password" />
+                                            </label>
+                                            <span class="lost_password">
+                                                <a href="#">Lost Your Password?</a>
+                                            </span>
+                                        </p>
+                                        <div class="form-row">
+                                            <input type="submit" class="button border margin-top-5" name="login"
+                                                value="Login" />
+                                            <div class="checkboxes margin-top-10">
+                                                <input id="remember-me" type="checkbox" name="check">
+                                                <label for="remember-me">Remember Me</label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- Register -->
+                                <div class="tab-content" id="tab2" style="display: none;">
+                                    <form method="post" class="register">
+                                        <p class="form-row form-row-wide">
+                                            <label for="username2">Username:
+                                                <i class="im im-icon-Male"></i>
+                                                <input type="text" class="input-text" name="username" id="username2"
+                                                    value="" />
+                                            </label>
+                                        </p>
+                                        <p class="form-row form-row-wide">
+                                            <label for="email2">Email Address:
+                                                <i class="im im-icon-Mail"></i>
+                                                <input type="text" class="input-text" name="email" id="email2"
+                                                    value="" />
+                                            </label>
+                                        </p>
+                                        <p class="form-row form-row-wide">
+											<label for="phone">Phone Number:
+												<i class="sl sl-icon-phone"></i>
+												<input type="tel" class="input-text" name="phone" id="phone" value="" />
+											</label>
+										</p>
+                                        <p class="form-row form-row-wide">
+                                            <label for="password1">Password:
+                                                <i class="im im-icon-Lock-2"></i>
+                                                <input class="input-text" type="password" name="password1"
+                                                    id="password1" />
+                                            </label>
+                                        </p>
+                                        <p class="form-row form-row-wide">
+                                            <label for="password2">Repeat Password:
+                                                <i class="im im-icon-Lock-2"></i>
+                                                <input class="input-text" type="password" name="password2"
+                                                    id="password2" />
+                                            </label>
+                                        </p>
+                                        <input type="submit" class="button border fw margin-top-10" name="register"
+                                            value="Register" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sign In Popup / End -->
+                </div>
+            </div>
+        </header>
+        <div class="clearfix"></div>
+        <!-- Header Container / End -->
+
+        <!-- Titlebar -->
+        <div id="titlebar" class="gradient">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Internships</h2><span>Explore Exciting Internship Opportunities</span>
+                        <!-- Breadcrumbs -->
+                        <nav id="breadcrumbs">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li>Internships</li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <style>
+            .internship-item {
+                display: block;
+                /* Initially display all items */
+            }
+        </style>
+        {% load static %}
+        <div class="container">
+            <div class="row">
+                <!-- Search -->
+                <div class="col-md-12">
+                    <div class="main-search-input gray-style margin-top-0 margin-bottom-10">
+                        <div class="main-search-input-item">
+                            <input type="text" id="search-input" placeholder="What are you looking for?" value="" />
+                        </div>
+                        <div class="main-search-input-item">
+                            <select id="category-select" data-placeholder="All Categories" class="chosen-select">
+                                <option value="all">All Categories</option>
+                                <option value="technology">Technology</option>
+                                <option value="business">Business</option>
+                                <option value="programming">Programming</option>
+                                <option value="design">Design</option>
+                            </select>
+                        </div>
+                        <button class="button" id="search-button">Search</button>
+                    </div>
+                </div>
+                <!-- Search Section / End -->
+
+                <div class="row" id="internship-list">
+                    <!-- Internship Item -->
+                    <div class="col-lg-4 col-md-6 internship-item" data-category="programming">
+                        <a href="{% url 'fullstackwithpython' %}" class="listing-item-container compact">
+
+                            <div class="listing-item">
+                                <img src="{% static 'images/download.png' %}" alt="">
+                                <div class="listing-item-content">
+                                    <div class="numerical-rating" data-rating="4.5"></div>
+                                    <h3>Full Stack Web Dev(with python)</h3>
+                                    <span>1 Month / 45 Days / 3 Months</span>
+                                </div>
+                                <span class="like-icon"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Internship Item / End -->
+
+                    <!-- Internship Item -->
+                    <div class="col-lg-4 col-md-6 internship-item" data-category="design">
+                        <a href="internship-single-page.html" class="listing-item-container compact">
+                            <div class="listing-item">
+                                <img src="{% static 'images/web-designing.jpg' %}" alt="">
+                                <div class="listing-item-content">
+                                    <div class="numerical-rating" data-rating="5.0"></div>
+                                    <h3>Web Designing</h3>
+                                    <span>1 Month / 45 Days / 3 Months</span>
+                                </div>
+                                <span class="like-icon"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Internship Item / End -->
+
+                    <!-- Internship Item -->
+                    <div class="col-lg-4 col-md-6 internship-item" data-category="programming">
+                        <a href="{% url 'pythoninternship' %}" class="listing-item-container compact">
+
+                            <div class="listing-item">
+                                <img src="{% static 'images/python-svgrepo-com.png' %}" alt="">
+                                <div class="listing-item-content">
+                                    <div class="numerical-rating" data-rating="4.0"></div>
+                                    <h3>Python</h3>
+                                    <span>1 Month / 45 Days / 3 Months</span>
+                                </div>
+                                <span class="like-icon"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 internship-item" data-category="programming">
+                        <a href="{% url 'djangointernship' %}" class="listing-item-container compact">
+                            <div class="listing-item">
+                                <img src="{% static 'images/django-icon-svgrepo-com.png' %}" alt="">
+                                <div class="listing-item-content">
+                                    <div class="numerical-rating" data-rating="4.5"></div>
+                                    <h3>Django Intern</h3>
+                                    <span>1 Month / 45 Days / 3 Months</span>
+                                </div>
+                                <span class="like-icon"></span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Internship Item / End -->
+
+                    <!-- Additional Internship Items -->
+                    <!-- Internship Item -->
+                    <div class="col-lg-4 col-md-6 internship-item" data-category="programming">
+                        <a href="{% url 'javainternship' %}" class="listing-item-container compact">
+
+                            <div class="listing-item">
+                                <img src="{% static 'images/java-logo-svgrepo-com.png' %}" alt="">
+                                <div class="listing-item-content">
+                                    <div class="numerical-rating" data-rating="4.5"></div>
+                                    <h3>Java Intern</h3>
+                                    <span>1 Month / 45 Days / 3 Months</span>
+                                </div>
+                                <span class="like-icon"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Internship Item / End -->
+
+                    <!-- Internship Item -->
+                    <div class="col-lg-4 col-md-6 internship-item" data-category="programming">
+                        <a href="{% url 'javascriptinternship' %}" class="listing-item-container compact">
+
+                            <div class="listing-item">
+                                <img src="{% static 'images/javascript-logo-svgrepo-com.png' %}" alt="">
+                                <div class="listing-item-content">
+                                    <div class="numerical-rating" data-rating="4.0"></div>
+                                    <h3>JavaScript Intern</h3>
+                                    <span>1 Month / 45 Days / 3 Months</span>
+                                </div>
+                                <span class="like-icon"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Internship Item / End -->
+
+                    <!-- Internship Item -->
+                    <div class="col-lg-4 col-md-6 internship-item" data-category="design">
+                        <a href="{% url 'bootstrapinternship' %}" class="listing-item-container compact">
+
+                            <div class="listing-item">
+                                <img src="{% static 'images/bootstrap-4-logo-svgrepo-com.png' %}" alt="">
+                                <div class="listing-item-content">
+                                    <div class="numerical-rating" data-rating="5.0"></div>
+                                    <h3>Bootstrap Intern</h3>
+                                    <span>1 Month / 45 Days / 3 Months</span>
+                                </div>
+                                <span class="like-icon"></span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Internship Item / End -->
+
+                    <!-- Additional Internships -->
+                    <div class="col-lg-4 col-md-6 internship-item" data-category="programming">
+                        <a href="{% url 'jqueryinternship' %}" class="listing-item-container compact">
+
+                            <div class="listing-item">
+                                <img src="{% static 'images/jquery-1-logo-svgrepo-com.png' %}" alt="">
+                                <div class="listing-item-content">
+                                    <div class="numerical-rating" data-rating="4.0"></div>
+                                    <h3>JQuery Intern</h3>
+                                    <span>1 Month / 45 Days / 3 Months</span>
+                                </div>
+                                <span class="like-icon"></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Pagination -->
+                        <div class="pagination-container margin-top-20 margin-bottom-40">
+                            <nav class="pagination">
+                                <ul id="pagination">
+
+                                </ul>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination / End -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer">
+            <!-- Main -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-6">
+                        <img class="footer-logo" src="{% static 'images/internmate_transparent.png' %}"
+                            alt="InternMate Logo">
+
+                        <br><br>
+                        <p>InternMate is dedicated to bridging the gap between students and top companies by
+                            offering comprehensive internship opportunities. We provide extensive resources and
+                            personalized guidance to help you kickstart your career and achieve your professional
+                            goals.</p>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                        <h4>Helpful Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="#sign-in-dialog" class="popup-with-zoom-anim open-login">Login</a></li>
+                            <li><a href="#sign-in-dialog" class="popup-with-zoom-anim open-register">Sign Up</a>
+                            <li><a href="#">My Account</a></li>
+                        </ul>
+
+                        <ul class="footer-links">
+                            <li><a href="{% url 'faq' %}">FAQ</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-12">
+                        <h4>Contact Us</h4>
+                        <div class="text-widget">
+                            <span>AMRITSAR,PUNJAB</span> <br>
+                            Phone: <span> +91 9877817876 </span><br>
+                            E-Mail:<span> <a href="mailto:internamte2024@gmail.com">internamte2024@gmail.com</a>
+                            </span><br>
+                        </div>
+
+                        <ul class="social-icons margin-top-20">
+                            <li><a class="linkedin" href="https://www.linkedin.com/in/internmate-32b619317"><i
+                                        class="icon-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyrights">© 2024 InternMate. All Rights Reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer / End -->
+
+        <!-- Back To Top Button -->
+        <div id="backtotop"><a href="#"></a></div>
+
+        <!-- Scripts -->
+        <script type="text/javascript" src="{% static 'scripts/jquery-3.4.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/jquery-migrate-3.1.0.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/mmenu.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/chosen.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/slick.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/rangeslider.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/magnific-popup.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/waypoints.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/counterup.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/jquery-ui.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/tooltips.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/custom.js' %}"></script>
+        <script type="text/javascript" src="{% static 'scripts/pagination.js' %}"></script> <!-- Add this line -->
+
+
+        <script type="text/javascript">
+            // Pagination Script
+            document.addEventListener('DOMContentLoaded', function () {
+                const itemsPerPage = 6;
+                const internshipItems = document.querySelectorAll('.internship-item');
+                const totalPages = Math.ceil(internshipItems.length / itemsPerPage);
+                const paginationElement = document.getElementById('pagination');
+
+                function showPage(page) {
+                    internshipItems.forEach((item, index) => {
+                        if (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
+
+                function createPagination() {
+                    for (let i = 1; i <= totalPages; i++) {
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = '#';
+                        a.innerText = i;
+                        a.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            document.querySelector('.pagination .current-page').classList.remove('current-page');
+                            a.classList.add('current-page');
+                            showPage(i);
+                        });
+                        if (i === 1) {
+                            a.classList.add('current-page');
+                        }
+                        li.appendChild(a);
+                        paginationElement.appendChild(li);
+                    }
+                }
+
+                createPagination();
+                showPage(1);
+            });
+            function filterInternships() {
+                var searchInput = document.getElementById('search-input').value.toLowerCase();
+                var categorySelect = document.getElementById('category-select').value.toLowerCase();
+                var items = document.querySelectorAll('.internship-item');
+
+                items.forEach(function (item) {
+                    var title = item.querySelector('h3').innerText.toLowerCase();
+                    var category = item.getAttribute('data-category').toLowerCase();
+
+                    var matchesSearch = title.includes(searchInput) || searchInput === "";
+                    var matchesCategory = category === categorySelect || categorySelect === "all";
+
+                    if (matchesSearch && matchesCategory) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            document.getElementById('search-input').addEventListener('input', filterInternships);
+            document.getElementById('category-select').addEventListener('change', filterInternships);
+            document.getElementById('search-button').addEventListener('click', filterInternships);
+
+
+        </script>
+</body>
+
+</html>

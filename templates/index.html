@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+
+<head>
+
+	<!-- Basic Page Needs
+================================================== -->
+	<title>INTERNMATE</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+	<!-- CSS
+================================================== -->
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main-color.css' %}" id="colors">
+
+</head>
+
+<body>
+	{% load static %}
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header Container
+================================================== -->
+		<header id="header-container">
+			<div id="header">
+				<div class="container">
+					<div class="left-side">
+						<div id="logo">
+							<a href="{% url 'index' %}"> <img src="{% static 'images/internmate_transparent.png' %}"
+									alt="Logo"></a>
+						</div>
+						<div class="mmenu-trigger">
+							<button class="hamburger hamburger--collapse" type="button">
+								<span class="hamburger-box">
+									<span class="hamburger-inner"></span>
+								</span>
+							</button>
+						</div>
+						<nav id="navigation" class="style-1">
+							<ul id="responsive">
+								<li><a class="current" href="{% url 'index' %}">Home</a></li>
+								<li><a href="{% url 'internships' %}">Internships</a>
+									<ul>
+										<li><a href="{% url 'fullstackwithpython' %}">Full Stack Web Dev</a></li>
+										<li><a href="{% url 'webdesigning' %}">Web Dev</a></li>
+										<li><a href="{% url 'pythoninternship' %}">Python</a></li>
+										<li><a href="{% url 'javainternship' %}">Java</a></li>
+										<li><a href="{% url 'javascriptinternship' %}">JavaScript</a></li>
+										<li><a href="{% url 'bootstrapinternship' %}">Bootstrap</a></li>
+										<li><a href="{% url 'htmlinternship' %}">HTML</a></li>
+										<li><a href="{% url 'cssinternship' %}">CSS</a></li>
+									</ul>
+								</li>
+								<li><a href="{% url 'aboutus' %}">About</a></li>
+								<li><a href="{% url 'faq' %}">FAQ</a></li>
+								<li><a href="{% url 'contact' %}">Contact</a></li>
+							</ul>
+						</nav>
+
+						<div class="clearfix"></div>
+					</div>
+					<div class="right-side">
+						<div class="header-widget">
+							<a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim button border"><i
+									class="sl sl-icon-login"></i> Sign In</a>
+							<a href="{% url 'contact' %}" class="button border with-icon">Contact Us <i
+									class="sl sl-icon-envelope-open"></i></a>
+						</div>
+					</div>
+					<!-- Sign In Popup -->
+					<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+
+						<div class="small-dialog-header">
+							<h3>Sign In</h3>
+						</div>
+
+						<!--Tabs -->
+						<div class="sign-in-form style-1">
+
+							<ul class="tabs-nav">
+								<li class=""><a href="#tab1">Log In</a></li>
+								<li><a href="#tab2">Register</a></li>
+							</ul>
+
+							<div class="tabs-container alt">
+
+								<!-- Login -->
+								<div class="tab-content" id="tab1" style="display: none;">
+									<form method="post" class="login">
+
+										<p class="form-row form-row-wide">
+											<label for="username">Username:
+												<i class="im im-icon-Male"></i>
+												<input type="text" class="input-text" name="username" id="username"
+													value="" />
+											</label>
+										</p>
+
+										<p class="form-row form-row-wide">
+											<label for="password">Password:
+												<i class="im im-icon-Lock-2"></i>
+												<input class="input-text" type="password" name="password"
+													id="password" />
+											</label>
+											<span class="lost_password">
+												<a href="#">Lost Your Password?</a>
+											</span>
+										</p>
+
+										<div class="form-row">
+											<input type="submit" class="button border margin-top-5" name="login"
+												value="Login" />
+											<div class="checkboxes margin-top-10">
+												<input id="remember-me" type="checkbox" name="check">
+												<label for="remember-me">Remember Me</label>
+											</div>
+										</div>
+									</form>
+								</div>
+
+
+								<!-- Register -->
+								<div class="tab-content" id="tab2" style="display: none;">
+									<form method="post" class="register">
+
+										<p class="form-row form-row-wide">
+											<label for="username2">Username:
+												<i class="im im-icon-Male"></i>
+												<input type="text" class="input-text" name="username" id="username2"
+													value="" />
+											</label>
+										</p>
+
+										<p class="form-row form-row-wide">
+											<label for="email2">Email Address:
+												<i class="im im-icon-Mail"></i>
+												<input type="text" class="input-text" name="email" id="email2"
+													value="" />
+											</label>
+										</p>
+
+										<p class="form-row form-row-wide">
+											<label for="phone">Phone Number:
+												<i class="sl sl-icon-phone"></i>
+												<input type="tel" class="input-text" name="phone" id="phone" value="" />
+											</label>
+										</p>
+
+										<p class="form-row form-row-wide">
+											<label for="password1">Password:
+												<i class="im im-icon-Lock-2"></i>
+												<input class="input-text" type="password" name="password1"
+													id="password1" />
+											</label>
+										</p>
+
+										<p class="form-row form-row-wide">
+											<label for="password2">Repeat Password:
+												<i class="im im-icon-Lock-2"></i>
+												<input class="input-text" type="password" name="password2"
+													id="password2" />
+											</label>
+										</p>
+
+										<input type="submit" class="button border fw margin-top-10" name="register"
+											value="Register" />
+									</form>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!-- Sign In Popup / End -->
+				</div>
+			</div>
+		</header>
+
+		<div class="clearfix">
+			<!-- Header Container / End -->
+
+
+
+			<!-- Slider
+================================================== -->
+
+			<!-- Revolution Slider -->
+			<div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container"
+				data-alias="classicslider1"
+				style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+
+				<!-- 5.0.7 auto mode -->
+				<div id="rev_slider_4_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container"
+					data-alias="classicslider1"
+					style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+
+					<!-- 5.0.7 auto mode -->
+					<div id="rev_slider_4_1" class="rev_slider home fullwidthabanner" style="display:none;"
+						data-version="5.0.7">
+						<ul>
+
+							<!-- Slide 1 -->
+							<li data-index="rs-1" data-transition="fade" data-slotamount="default"
+								data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="1000"
+								data-rotate="0" data-fstransition="fade" data-fsmasterspeed="800" data-fsslotamount="7"
+								data-saveperformance="off">
+
+								<!-- Video Background -->
+								<div class="video-bg">
+									<video class="rev-slidebg" autoplay muted loop>
+										<source src="{% static 'video/main1.mp4' %}" type="video/mp4">
+									</video>
+									<div class="video-overlay"></div>
+								</div>
+
+
+								<!-- Caption -->
+								<div class="tp-caption custom-caption-2 tp-shape tp-shapewrapper tp-resizeme rs-parallaxlevel-0"
+									id="slide-1-layer-2" data-x="['left','left','left','left']"
+									data-hoffset="['0','40','40','40']" data-y="['middle','middle','middle','middle']"
+									data-voffset="['0']" data-width="['640','640', 640','420','320']" data-height="auto"
+									data-whitespace="nowrap" data-transform_idle="o:1;"
+									data-transform_in="y:0;opacity:0;s:1000;e:Power2.easeOutExpo;s:400;e:Power2.easeOutExpo"
+									data-transform_out="" data-mask_in="x:0px;y:[20%];s:inherit;e:inherit;"
+									data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1000"
+									data-responsive_offset="on">
+
+									<!-- Caption Content -->
+									<div class="R_title margin-bottom-15" id="slide-2-layer-1"
+										data-x="['left','center','center','center']" data-hoffset="['0','0','40','0']"
+										data-y="['middle','middle','middle','middle']"
+										data-voffset="['-40','-40','-20','-80']"
+										data-fontsize="['42','36', '32','36','22']"
+										data-lineheight="['70','60','60','45','35']"
+										data-width="['640','640', 640','420','320']" data-height="none"
+										data-whitespace="normal" data-transform_idle="o:1;"
+										data-transform_in="y:-50px;sX:2;sY:2;opacity:0;s:1000;e:Power4.easeOut;"
+										data-transform_out="opacity:0;s:300;" data-start="600" data-splitin="none"
+										data-splitout="none" data-basealign="slide" data-responsive_offset="off"
+										data-responsive="off"
+										style="z-index: 6; color: #fff; letter-spacing: 0px; font-weight: 600;">Welcome
+										to INTERNMATE</div>
+
+									<div class="caption-text"
+										style="color: #fff; font-size: 20px; line-height: 30px; margin-bottom: 20px;">
+										Connecting you with top internships to kickstart your career. Discover
+										opportunities, build your resume, and grow your professional network.</div>
+									<a href="#sign-in-dialog" class="button medium popup-with-zoom-anim">Get Started</a>
+
+								</div>
+
+							</li>
+
+							<!-- Slide 2 -->
+							<li data-index="rs-2" data-transition="fade" data-slotamount="default"
+								data-easein="Power4.easeInOut" data-easeout="Power4.easeInOut" data-masterspeed="1000"
+								data-rotate="0" data-fstransition="fade" data-fsmasterspeed="800" data-fsslotamount="7"
+								data-saveperformance="off">
+
+								<!-- Video Background -->
+								<div class="video-bg">
+									<video class="rev-slidebg" autoplay muted loop>
+										<source src="{% static 'video/main2.mp4' %}" type="video/mp4">
+									</video>
+									<div class="video-overlay"></div>
+								</div>
+
+								<!-- Caption -->
+								<div class="tp-caption centered custom-caption-2 tp-shape tp-shapewrapper tp-resizeme rs-parallaxlevel-0"
+									id="slide-2-layer-2" data-x="['center','center','center','center']"
+									data-hoffset="['0']" data-y="['middle','middle','middle','middle']"
+									data-voffset="['0']" data-width="['640','640', 640','420','320']" data-height="auto"
+									data-whitespace="nowrap" data-transform_idle="o:1;"
+									data-transform_in="y:0;opacity:0;s:1000;e:Power2.easeOutExpo;s:400;e:Power2.easeOutExpo"
+									data-transform_out="" data-mask_in="x:0px;y:[20%];s:inherit;e:inherit;"
+									data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1000"
+									data-responsive_offset="on">
+
+									<!-- Caption Content -->
+									<div class="R_title margin-bottom-15" id="slide-2-layer-3"
+										data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+										data-y="['middle','middle','middle','middle']"
+										data-voffset="['-40','-40','-20','-80']"
+										data-fontsize="['42','36', '32','36','22']"
+										data-lineheight="['70','60','60','45','35']"
+										data-width="['640','640', 640','420','320']" data-height="none"
+										data-whitespace="normal" data-transform_idle="o:1;"
+										data-transform_in="y:-50px;sX:2;sY:2;opacity:0;s:1000;e:Power4.easeOut;"
+										data-transform_out="opacity:0;s:300;" data-start="600" data-splitin="none"
+										data-splitout="none" data-basealign="slide" data-responsive_offset="off"
+										data-responsive="off"
+										style="z-index: 6; color: #fff; letter-spacing: 0px; font-weight: 600;">Empower
+										Your Future</div>
+
+									<div class="caption-text"
+										style="color: #fff; font-size: 20px; line-height: 30px; margin-bottom: 20px;">
+										Join a community of driven individuals and find internships that match your
+										skills and ambitions. Start your journey with INTERNMATE today.</div>
+									<a href="#" class="button medium">Read More</a>
+								</div>
+
+							</li>
+
+						</ul>
+						<div class="tp-static-layers"></div>
+
+					</div>
+				</div>
+
+			</div>
+
+
+
+			<!-- Revolution Slider / End -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="headline centered margin-top-75">
+							Browse Internship Categories
+						</h3>
+					</div>
+				</div>
+			</div>
+
+			<!-- Category Boxes -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="categories-boxes-container margin-top-5 margin-bottom-30">
+							<!-- Box -->
+							<a href="{% url 'programming' %}" class="category-small-box">
+								<i class="fas fa-laptop-code"></i>
+								<h4>Programming</h4>
+								<span class="category-box-counter">6</span>
+							</a>
+
+							<!-- Box -->
+							<a href="{% url 'development' %}" class="category-small-box">
+								<i class="fas fa-code"></i>
+								<h4>Development</h4>
+								<span class="category-box-counter">4</span>
+							</a>
+
+							<!-- Box -->
+							<a href="{% url 'webdesigning' %}" class="category-small-box">
+								<i class="fas fa-paint-brush"></i>
+								<h4>Web Design</h4>
+								<span class="category-box-counter">6</span>
+							</a>
+
+							<!-- Box -->
+							<a href="{% url 'coming_soon' %}" class="category-small-box">
+								<i class="fas fa-users"></i>
+								<h4>soon..</h4>
+							</a>
+
+							<!-- Box -->
+							<a href="{% url 'coming_soon' %}" class="category-small-box">
+								<i class="fas fa-clipboard-check"></i>
+								<h4>soon...</h4>
+							</a>
+
+							<!-- Box -->
+							<a href="{% url 'coming_soon' %}" class="category-small-box">
+								<i class="fas fa-briefcase"></i>
+								<h4>soon...</h4>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Category Boxes / End -->
+
+
+			<!-- Fullwidth Section -->
+			<section class="fullwidth margin-top-65 padding-top-75 padding-bottom-70" data-background-color="#f8f8f8">
+
+				<div class="container">
+					<div class="row">
+
+						<div class="col-md-12">
+							<h3 class="headline centered margin-bottom-45">
+								<strong class="headline-with-separator">Internship Opportunities</strong>
+								<span>Discover Top-Rated Programs</span>
+							</h3>
+						</div>
+
+						<div class="col-md-12">
+							<div class="simple-slick-carousel dots-nav">
+								<!-- Programming Box Item -->
+								<div class="carousel-item">
+									<a href="#" class="listing-item-container">
+										<div class="listing-item">
+											<img src="{% static 'images/html5-css3.jpg' %}" alt="">
+											<div class="listing-badge popular-course"
+												style="background-color: #00cc00;">Popular Course</div>
+											<div class="listing-item-content">
+												<span class="tag">Web Development</span>
+												<h3>HTML & CSS <i class="programming-icon html-css-icon"></i></h3>
+												<span>Learn the basics of HTML and CSS</span>
+											</div>
+											<span class="like-icon"></span>
+										</div>
+										<div class="star-rating" data-rating="4.0">
+											<div class="rating-counter">(20 reviews)</div>
+										</div>
+									</a>
+								</div>
+								<!-- Programming Box Item / End -->
+
+								<!-- Programming Box Item -->
+								<div class="carousel-item">
+									<a href="{% url 'pythoninternship' %}" class="listing-item-container">
+										<div class="listing-item">
+											<img src="{% static 'images/python-svgrepo-com.png' %}" alt="">
+											<div class="listing-item-content">
+												<span class="tag">Programming</span>
+												<h3>Python <i class="programming-icon python-icon"></i></h3>
+												<span>Master Python programming</span>
+											</div>
+											<span class="like-icon"></span>
+										</div>
+										<div class="star-rating" data-rating="4.5">
+											<div class="rating-counter">(35 reviews)</div>
+										</div>
+									</a>
+								</div>
+								<!-- Programming Box Item / End -->
+
+								<!-- Programming Box Item -->
+								<div class="carousel-item">
+									<a href="{% url 'fullstackwithpython' %}" class="listing-item-container">
+										<div class="listing-item">
+											<img src="{% static 'images/fullstack.png' %}" alt="">
+											<div class="listing-badge popular-course"
+												style="background-color: #00cc00;">Popular Course</div>
+											<div class="listing-item-content">
+												<span class="tag">Web Development</span>
+												<h3>Full Stack Web Development <i
+														class="programming-icon fullstack-icon"></i></h3>
+												<span>Comprehensive Full Stack Course</span>
+											</div>
+											<span class="like-icon"></span>
+										</div>
+										<div class="star-rating" data-rating="4.8">
+											<div class="rating-counter">(40 reviews)</div>
+										</div>
+									</a>
+								</div>
+								<!-- Programming Box Item / End -->
+
+								<!-- Programming Box Item -->
+								<div class="carousel-item">
+									<a href="{% url 'javascriptinternship' %}" class="listing-item-container">
+										<div class="listing-item">
+											<img src="{% static 'images/javascript-logo-svgrepo-com.png' %}" alt="">
+											<div class="listing-item-content">
+												<span class="tag">Web Development</span>
+												<h3>JavaScript <i class="programming-icon javascript-icon"></i></h3>
+												<span>Learn JavaScript programming</span>
+											</div>
+											<span class="like-icon"></span>
+										</div>
+										<div class="star-rating" data-rating="4.2">
+											<div class="rating-counter">(25 reviews)</div>
+										</div>
+									</a>
+								</div>
+								<!-- Programming Box Item / End -->
+
+								<!-- Programming Box Item -->
+								<div class="carousel-item">
+									<a href="{% url 'bootstrapinternship' %}" class="listing-item-container">
+										<div class="listing-item">
+											<img src="{% static 'images/bootstrap-4-logo-svgrepo-com.png' %}" alt="">
+											<div class="listing-item-content">
+												<span class="tag">Web Development</span>
+												<h3>Bootstrap<i class="programming-icon bootstrap-jquery-icon"></i></h3>
+												<span>Front-end framework</span>
+											</div>
+											<span class="like-icon"></span>
+										</div>
+										<div class="star-rating" data-rating="4.0">
+											<div class="rating-counter">(18 reviews)</div>
+										</div>
+									</a>
+								</div>
+								<!-- Programming Box Item / End -->
+
+								<!-- Programming Box Item -->
+								<div class="carousel-item">
+									<a href="{% url 'djangointernship' %}" class="listing-item-container">
+										<div class="listing-item">
+											<img src="{% static 'images/django-icon-svgrepo-com.png' %}" alt="">
+											<div class="listing-badge popular-course"
+												style="background-color: #00cc00;">Popular Course</div>
+											<div class="listing-item-content">
+												<span class="tag">Programming</span>
+												<h3>Django <i class="programming-icon django-icon"></i></h3>
+												<span>Web development with Django</span>
+											</div>
+											<span class="like-icon"></span>
+										</div>
+										<div class="star-rating" data-rating="4.6">
+											<div class="rating-counter">(27 reviews)</div>
+										</div>
+									</a>
+								</div>
+								<!-- Programming Box Item / End -->
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</section>
+
+			<!-- Include the Slick Carousel JavaScript and CSS files -->
+
+
+
+
+			<section class="about-us margin-top-65 padding-top-75 padding-bottom-70" data-background-color="#ffffff">
+
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h3 class="headline centered margin-bottom-45">
+								About InternMate
+								<span>Who we are and what we do</span>
+							</h3>
+							<p>
+								Welcome to InternMate, your gateway to valuable internship opportunities and career
+								growth. We believe in nurturing the talents of tomorrow by providing comprehensive
+								support and resources for students and young professionals.
+							</p>
+							<h3 class="headline centered margin-bottom-45">
+								Why Choose InternMate?
+							</h3>
+							<ul>
+								<li>📚 <strong>Extensive Internship Listings</strong>: Find the perfect match for your
+									skills and interests.</li>
+								<li>📖 <strong>Comprehensive Study Materials</strong>: Enhance your knowledge with our
+									curated resources.</li>
+								<li>🎯 <strong>Interview Preparation</strong>: Ace your interviews with our preparation
+									guides and mock sessions.</li>
+								<li>💬 <strong>Communication Skills Training</strong>: Boost your confidence and soft
+									skills.</li>
+								<li>👩‍🏫 <strong>Mentorship and Guidance</strong>: Receive personalized advice from
+									industry experts.</li>
+								<li>💼 <strong>Placement Assistant</strong>: Receive guidance and support to land your
+									dream job or internship.</li>
+
+							</ul>
+							<h3 class="headline centered margin-bottom-45">
+								Get Started Today!
+							</h3>
+							<p>
+								Join InternMate to kickstart your career and gain invaluable experience working on
+								real-world projects. Our dedicated team is here to guide you every step of the way,
+								helping you to achieve your professional goals.
+							</p>
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+			<section class="fullwidth margin-top-0 padding-top-75 padding-bottom-65" data-background-color="#fff">
+
+				<!-- Container / Start -->
+				<div class="container">
+
+					<div class="row">
+						<div class="col-md-12">
+							<h3 class="headline centered margin-bottom-50">
+								Internship Pricing Plans
+							</h3>
+						</div>
+					</div>
+
+					<!-- Row / Start -->
+					<div class="row">
+
+						<div class="col-md-12">
+							<div class="pricing-container margin-top-30">
+
+								<!-- Plan #1 -->
+								<div class="plan">
+
+									<div class="plan-price">
+										<h3>1-Month Internship</h3>
+										<span class="value">2000 INR</span>
+										<span class="period">Fee for a one-month internship program</span>
+									</div>
+
+									<div class="plan-features">
+										<ul>
+											<li>Certificate of Completion</li>
+											<li>24/7 Support</li>
+											<li>Access to All Internship Resources</li>
+
+											<li>Provide Notes</li>
+											<li>Live Sessions</li>
+											<li>Weekly Doubt Sessions on Saturday</li>
+											<li>Interview Practice</li>
+										</ul>
+									</div>
+
+								</div>
+
+								<!-- Plan #2 -->
+								<div class="plan">
+
+									<div class="plan-price">
+										<h3>45-Day Internship</h3>
+										<span class="value">3500 INR</span>
+										<span class="period">Fee for a 45-day internship program</span>
+									</div>
+
+									<div class="plan-features">
+										<ul>
+											<li>Certificate of Completion</li>
+											<li>24/7 Support</li>
+											<li>Access to All Internship Resources</li>
+
+											<li>Provide Notes</li>
+											<li>Live Sessions</li>
+											<li>Weekly Doubt Sessions on Saturday</li>
+											<li>Interview Practice</li>
+										</ul>
+									</div>
+								</div>
+
+								<!-- Plan #3 -->
+								<div class="plan">
+
+									<div class="plan-price">
+										<h3>3-Month Internship</h3>
+										<span class="value">5500 INR</span>
+										<span class="period">Fee for a three-month internship program</span>
+									</div>
+
+									<div class="plan-features">
+										<ul>
+											<li>Certificate of Completion</li>
+											<li>24/7 Support</li>
+											<li>Access to All Internship Resources</li>
+
+											<li>Provide Notes</li>
+											<li>Live Sessions</li>
+											<li>Weekly Doubt Sessions on Saturday</li>
+											<li>Interview Practice</li>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!-- Row / End -->
+
+				</div>
+				<!-- Container / End -->
+				<section id="interest-form" class="fullwidth margin-top-65 padding-top-75 padding-bottom-70"
+					data-background-color="#f8f8f8">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<h3 class="headline centered margin-bottom-45">
+									<strong class="headline-with-separator">Interest Form</strong>
+									<span>Let us know your interests!</span>
+								</h3>
+							</div>
+
+							<div class="col-md-12">
+								<form method="post" action="submit_interest_form.php" class="interest-form">
+
+									<div class="form-group">
+										<label for="name">Name:</label>
+										<input type="text" id="name" name="name" class="input-text" required>
+									</div>
+
+									<div class="form-group">
+										<label for="phone">Phone Number:</label>
+										<input type="tel" id="phone" name="phone" class="input-text" required>
+									</div>
+
+									<div class="form-group">
+										<label for="email">Email:</label>
+										<input type="email" id="email" name="email" class="input-text" required>
+									</div>
+
+									<div class="form-group">
+										<label for="domain">Domain of Interest:</label>
+										<select id="domain" name="domain" class="input-text" required>
+											<option value="Full Stack Web Dev">Full Stack Web Dev</option>
+											<option value="Web Dev">Web Dev</option>
+											<option value="Python">Python</option>
+											<option value="Java">Java</option>
+											<option value="JavaScript">JavaScript</option>
+											<option value="Bootstrap">Bootstrap</option>
+											<option value="HTML">HTML</option>
+											<option value="CSS">CSS</option>
+											<option value="Django">Django</option>
+										</select>
+									</div>
+
+									<div class="form-group">
+										<label for="comments">Additional Comments:</label>
+										<textarea id="comments" name="comments" class="input-text" rows="4"></textarea>
+									</div>
+
+									<div class="form-group">
+										<input type="submit" class="button border fw margin-top-10" value="Submit">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="certificate-section" class="text-center">
+					<div class="bubble"></div>
+					<div class="bubble"></div>
+					<div class="bubble"></div>
+					<div class="bubble"></div>
+
+					<div class="container py-5">
+						<h2 class="section-title mb-4">Certificate of Completion</h2>
+						<p class="section-description mb-5">Receive a professional certificate upon completing your
+							internship, showcasing your skills and achievements.</p>
+						<div class="certificate-wrapper">
+							<img src="{% static 'images/certificate (2).png' %}" alt="Certificate"
+								class="certificate-img img-fluid">
+						</div>
+					</div>
+				</section>
+				<style>
+					#certificate-section {
+						position: relative;
+						color: white;
+						overflow: hidden;
+						padding: 3rem 1rem;
+						border-radius: 15px;
+						background: #fff;
+						/* Ensure text is readable over the background */
+					}
+
+					#certificate-section::before,
+					#certificate-section::after,
+					.bubble {
+						content: '';
+						position: absolute;
+						width: 200px;
+						height: 200px;
+						border-radius: 50%;
+						opacity: 0.7;
+						z-index: 1;
+						animation: bubble 6s ease-in-out infinite;
+					}
+
+					#certificate-section::before {
+						top: -100px;
+						left: -100px;
+						background: radial-gradient(circle, #D32F2F, transparent);
+					}
+
+					#certificate-section::after {
+						bottom: -100px;
+						right: -100px;
+						background: radial-gradient(circle, #fada5e, transparent);
+						animation-delay: 2s;
+					}
+
+					.bubble {
+						top: -200px;
+						left: 50%;
+						background: radial-gradient(circle, #D32F2F, transparent);
+						animation: bubbleMove 15s linear infinite;
+					}
+
+					.bubble:nth-child(2) {
+						top: 30%;
+						/* Position from the top */
+						left: 10%;
+						/* Position from the left */
+						background: radial-gradient(circle, #fada5e, transparent);
+						animation-delay: 4.5s;
+					}
+
+					.bubble:nth-child(3) {
+						top: 10%;
+						/* Position from the top */
+						left: 30%;
+						/* Position from the left */
+						background: radial-gradient(circle, #fada5e, transparent);
+						animation-delay: 2.5s;
+					}
+
+					.bubble:nth-child(4) {
+						bottom: 40%;
+						/* Position from the bottom */
+						right: 60%;
+						/* Position from the right */
+						background: radial-gradient(circle, #D32F2F, transparent);
+						animation-delay: 1.5s;
+					}
+
+					@keyframes bubble {
+
+						0%,
+						100% {
+							transform: scale(1);
+						}
+
+						50% {
+							transform: scale(1.5);
+						}
+					}
+
+					@keyframes bubbleMove {
+						0% {
+							transform: translateY(0);
+						}
+
+						100% {
+							transform: translateY(100vh);
+						}
+					}
+
+					.section-title {
+						font-size: 2.5rem;
+						font-weight: bold;
+						text-transform: uppercase;
+						animation: fadeInDown 1s ease-out;
+						z-index: 2;
+						position: relative;
+						color: #333;
+						/* Darker text color for readability */
+					}
+
+					.section-description {
+						font-size: 1.25rem;
+						animation: fadeInUp 1s ease-out;
+						z-index: 2;
+						position: relative;
+						color: #666;
+						/* Slightly lighter than title */
+					}
+
+					.certificate-wrapper {
+						position: relative;
+						overflow: hidden;
+						display: inline-block;
+						animation: zoomIn 1.5s ease-out;
+						z-index: 2;
+					}
+
+					.certificate-img {
+						width: 70%;
+						border: 5px solid white;
+						box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+						z-index: 2;
+					}
+
+					@keyframes fadeInDown {
+						from {
+							opacity: 0;
+							transform: translateY(-20px);
+						}
+
+						to {
+							opacity: 1;
+							transform: translateY(0);
+						}
+					}
+
+					@keyframes fadeInUp {
+						from {
+							opacity: 0;
+							transform: translateY(20px);
+						}
+
+						to {
+							opacity: 1;
+							transform: translateY(0);
+						}
+					}
+
+					@keyframes zoomIn {
+						from {
+							opacity: 0;
+							transform: scale(0.9);
+						}
+
+						to {
+							opacity: 1;
+							transform: scale(1);
+						}
+					}
+				</style>
+
+
+
+			</section>
+			<div class="col-md-6" style="margin: 0 auto; float: none;">
+				<h4 class="headline margin-top-70 margin-bottom-30 text-center">Frequently Asked Questions</h4>
+
+				<!-- Toggles Container -->
+				<div class="style-2">
+
+					<!-- Toggle 1 -->
+					<div class="toggle-wrap">
+						<span class="trigger"><a href="#">What is InternMate?<i class="sl sl-icon-plus"></i></a></span>
+						<div class="toggle-container">
+							<p>InternMate is your gateway to valuable internship opportunities and career growth. We
+								provide comprehensive support and resources for students and young professionals,
+								helping to nurture the talents of tomorrow.</p>
+						</div>
+					</div>
+
+					<!-- Toggle 2 -->
+					<div class="toggle-wrap">
+						<span class="trigger"><a href="#">Why should I choose InternMate?<i
+									class="sl sl-icon-plus"></i></a></span>
+						<div class="toggle-container">
+							<p>
+								<strong>Extensive Internship Listings</strong><br>
+								Find the perfect match for your skills and interests through our extensive
+								listings.<br><br>
+								<strong>Comprehensive Study Materials</strong><br>
+								Enhance your knowledge with our curated resources, covering a wide range of
+								topics.<br><br>
+								<strong>Interview Preparation</strong><br>
+								Ace your interviews with our thorough preparation guides and realistic mock
+								sessions.<br><br>
+								<strong>Communication Skills Training</strong><br>
+								Boost your confidence and improve your soft skills with our specialized training
+								sessions.<br><br>
+								<strong>Mentorship and Guidance</strong><br>
+								Receive personalized advice and guidance from industry experts who are committed to your
+								success.<br><br>
+								<strong>Company Referrals</strong><br>
+								Get connected with top companies that are actively seeking talented interns.
+							</p>
+						</div>
+					</div>
+
+					<!-- Toggle 3 -->
+					<div class="toggle-wrap">
+						<span class="trigger"><a href="#">How can InternMate help me prepare for interviews?<i
+									class="sl sl-icon-plus"></i></a></span>
+						<div class="toggle-container">
+							<p>We offer comprehensive preparation guides and mock interview sessions designed to help
+								you practice and excel in your interviews, boosting your confidence and readiness.</p>
+						</div>
+					</div>
+
+					<!-- Toggle 4 -->
+					<div class="toggle-wrap">
+						<span class="trigger"><a href="#">What kind of study materials does InternMate offer?<i
+									class="sl sl-icon-plus"></i></a></span>
+						<div class="toggle-container">
+							<p>Our platform provides a wealth of curated resources, including study guides, articles,
+								and tutorials, to enhance your knowledge and skills across various disciplines.</p>
+						</div>
+					</div>
+
+					<!-- Toggle 5 -->
+					<div class="toggle-wrap">
+						<span class="trigger"><a href="#">How can InternMate improve my communication skills?<i
+									class="sl sl-icon-plus"></i></a></span>
+						<div class="toggle-container">
+							<p>We offer targeted training sessions that focus on boosting your confidence and honing
+								your communication and soft skills, essential for professional success.</p>
+						</div>
+					</div>
+
+
+
+
+					<!-- Toggle 6 -->
+					<div class="toggle-wrap">
+						<span class="trigger"><a href="#">What kind of mentorship does InternMate provide?<i
+									class="sl sl-icon-plus"></i></a></span>
+						<div class="toggle-container">
+							<p>Our mentorship program offers personalized advice and guidance from seasoned industry
+								experts, helping you navigate your career path and achieve your professional goals.</p>
+						</div>
+					</div>
+
+				</div>
+				<!-- Toggles Container / End -->
+			</div>
+
+
+
+			<!-- Fullwidth Section / End -->
+			<section class="fullwidth margin-top-70 padding-top-75 padding-bottom-70" data-background-color="#f9f9f9">
+				<!-- Info Section -->
+				<div class="container">
+
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							<h3 class="headline centered">
+								What Our Users Say
+								<span class="margin-top-25">We collect reviews from our users so you can get an honest
+									opinion of what an experience with InternMate is really like!</span>
+							</h3>
+						</div>
+					</div>
+
+				</div>
+				<!-- Info Section / End -->
+
+				<!-- Categories Carousel -->
+				<div class="fullwidth-carousel-container margin-top-20">
+					<div class="testimonial-carousel testimonials">
+
+						<!-- Item -->
+						<div class="fw-carousel-review">
+							<div class="testimonial-box">
+								<div class="testimonial">InternMate provided me with an amazing internship opportunity
+									that matched my skills perfectly. The mentorship and guidance were top-notch, and I
+									gained invaluable experience. Highly recommended!</div>
+							</div>
+							<div class="testimonial-author">
+								<img src="{% static 'images/akash.jpeg' %}" alt="Portrait of Akash">
+
+								<h4>Rajan Kumar <span>Software Developer Intern</span></h4>
+							</div>
+						</div>
+
+						<!-- Item -->
+						<div class="fw-carousel-review">
+							<div class="testimonial-box">
+								<div class="testimonial">Thanks to InternMate, I was able to secure an internship in a
+									top company. The interview preparation and communication skills training boosted my
+									confidence. A great platform for students!</div>
+							</div>
+							<div class="testimonial-author">
+								<img src="{% static 'images/khushi.jpeg' %}" alt="Portrait of Khushi">
+
+								<h4>Naina Singh <span>HR Intern</span></h4>
+							</div>
+						</div>
+
+						<!-- Item -->
+						<div class="fw-carousel-review">
+							<div class="testimonial-box">
+								<div class="testimonial">InternMate’s extensive internship listings made it easy for me
+									to find the perfect role. The study materials and resources were very helpful in
+									enhancing my knowledge. I would definitely recommend InternMate to my peers.</div>
+							</div>
+							<div class="testimonial-author">
+								<img src="{% static 'images/abhi.jpg' %}" alt="Portrait of Abhi">
+
+								<h4>Rahul Sharma <span>Business Development Intern</span></h4>
+							</div>
+						</div>
+
+						<!-- Item -->
+						<div class="fw-carousel-review">
+							<div class="testimonial-box">
+								<div class="testimonial">The support and mentorship from InternMate were exceptional. I
+									gained practical experience and learned a lot from industry experts. It's a great
+									platform for anyone looking to start their career on the right foot.</div>
+							</div>
+							<div class="testimonial-author">
+								<img src="images/happy-client-04.jpg" alt="">
+								<h4>Kajal Verma <span>Quality Assurance Intern</span></h4>
+							</div>
+						</div>
+
+						<!-- Item -->
+						<div class="fw-carousel-review">
+							<div class="testimonial-box">
+								<div class="testimonial">InternMate connected me with a top company for my internship.
+									The experience was fantastic, and I gained valuable insights into the industry. The
+									communication skills training was particularly beneficial. Thank you, InternMate!
+								</div>
+							</div>
+							<div class="testimonial-author">
+								<img src="images/happy-client-05.jpg" alt="">
+								<h4>Gunjan Patel <span>Web Development Intern</span></h4>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- Categories Carousel / End -->
+
+
+			</section>
+
+			<div class="parallax" data-background="{% static 'images/python3.jpg' %}" data-color="#36383e"
+				data-color-opacity="0.6" data-img-width="800" data-img-height="505">
+
+
+				<!-- Infobox -->
+				<div class="text-content white-font">
+					<div class="container">
+
+						<div class="row">
+							<div class="col-lg-6 col-sm-8">
+								<h2>Kickstart Your Career with InternMate</h2>
+								<p>Join InternMate today to access a wide range of internship opportunities tailored to
+									your skills and interests. Our comprehensive resources and personalized guidance
+									will help you achieve your career goals.</p>
+								<a href="#sign-in-dialog" class="button medium popup-with-zoom-anim">Get Started</a>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- Infobox / End -->
+
+
+			</div>
+
+
+			<!-- Recent Blog Posts -->
+
+			<!-- Recent Blog Posts / End -->
+
+
+
+			<!-- Footer
+================================================== -->
+			<div id="footer">
+				<!-- Main -->
+				<div class="container">
+					<div class="row">
+						<div class="col-md-5 col-sm-6">
+							<img class="footer-logo" src="{% static 'images/internmate_transparent.png' %}"
+								alt="InternMate Logo">
+							<br><br>
+							<p>InternMate is dedicated to bridging the gap between students and top companies by
+								offering comprehensive internship opportunities. We provide extensive resources and
+								personalized guidance to help you kickstart your career and achieve your professional
+								goals.</p>
+						</div>
+
+						<div class="col-md-4 col-sm-6">
+							<h4>Helpful Links</h4>
+							<ul class="footer-links">
+								<li><a href="#sign-in-dialog" class="popup-with-zoom-anim open-login">Login</a></li>
+								<li><a href="#sign-in-dialog" class="popup-with-zoom-anim open-register">Sign Up</a>
+								</li>
+								<li><a href="#">My Account</a></li>
+							</ul>
+
+
+							<ul class="footer-links">
+								<li><a href="{% url 'faq' %}">FAQ</a></li>
+								<li><a href="{% url 'contact' %}">Contact</a></li>
+
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+
+						<div class="col-md-3 col-sm-12">
+							<h4>Contact Us</h4>
+							<div class="text-widget">
+								<span>AMRITSAR,PUNJAB</span> <br>
+								Phone: <span> +91 9877817876 </span><br>
+								E-Mail:<span> <a href="mailto:internamte2024@gmail.com">internamte2024@gmail.com</a>
+								</span><br>
+							</div>
+
+
+							<ul class="social-icons margin-top-20">
+								<li><a class="linkedin" href="https://linkedin.com/in/internmate-32b619317"><i
+											class="icon-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Copyright -->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="copyrights">© 2024 InternMate. All Rights Reserved.</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Footer / End -->
+
+
+			<!-- Back To Top Button -->
+			<div id="backtotop"><a href="#"></a></div>
+
+
+		</div>
+		<!-- Wrapper / End -->
+
+
+
+		<!-- Scripts
+================================================== -->
+		<script type="text/javascript" src="{% static 'scripts/jquery-3.4.1.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/jquery-migrate-3.1.0.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/mmenu.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/chosen.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/slick.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/rangeslider.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/magnific-popup.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/waypoints.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/counterup.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/jquery-ui.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/tooltips.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/custom.js' %}"></script>
+
+		<script>
+			$(document).ready(function () {
+				$('.popup-with-zoom-anim').magnificPopup({
+					type: 'inline',
+					fixedContentPos: false,
+					fixedBgPos: true,
+					overflowY: 'auto',
+					closeBtnInside: true,
+					preloader: false,
+					midClick: true,
+					removalDelay: 300,
+					mainClass: 'my-mfp-zoom-in',
+					callbacks: {
+						open: function () {
+							if ($(this.st.el).hasClass('open-login')) {
+								$('#sign-in-dialog .tabs-nav li').removeClass('active');
+								$('#sign-in-dialog .tabs-nav li:first-child').addClass('active');
+								$('#sign-in-dialog .tab-content').hide();
+								$('#sign-in-dialog #tab1').show();
+							} else if ($(this.st.el).hasClass('open-register')) {
+								$('#sign-in-dialog .tabs-nav li').removeClass('active');
+								$('#sign-in-dialog .tabs-nav li:last-child').addClass('active');
+								$('#sign-in-dialog .tab-content').hide();
+								$('#sign-in-dialog #tab2').show();
+							}
+						}
+					}
+				});
+			});
+		</script>
+
+
+
+
+		<!-- REVOLUTION SLIDER SCRIPT -->
+		<script type="text/javascript" src="{% static 'scripts/themepunch.tools.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'scripts/themepunch.revolution.min.js' %}"></script>
+
+
+		<script type="text/javascript">
+			var tpj = jQuery;
+			var revapi4;
+			tpj(document).ready(function () {
+				if (tpj("#rev_slider_4_1").revolution == undefined) {
+					revslider_showDoubleJqueryError("#rev_slider_4_1");
+				} else {
+					revapi4 = tpj("#rev_slider_4_1").show().revolution({
+						sliderType: "standard",
+						jsFileLocation: "scripts/",
+						sliderLayout: "auto",
+						dottedOverlay: "none",
+						delay: 9000,
+						navigation: {
+							keyboardNavigation: "off",
+							keyboard_direction: "horizontal",
+							mouseScrollNavigation: "off",
+							onHoverStop: "on",
+							touch: {
+								touchenabled: "on",
+								swipe_threshold: 75,
+								swipe_min_touches: 1,
+								swipe_direction: "horizontal",
+								drag_block_vertical: false
+							}
+							,
+							arrows: {
+								style: "zeus",
+								enable: true,
+								hide_onmobile: true,
+								hide_under: 600,
+								hide_onleave: true,
+								hide_delay: 200,
+								hide_delay_mobile: 1200,
+								tmp: '<div class="tp-title-wrap"></div>',
+								left: {
+									h_align: "left",
+									v_align: "center",
+									h_offset: 40,
+									v_offset: 0
+								},
+								right: {
+									h_align: "right",
+									v_align: "center",
+									h_offset: 40,
+									v_offset: 0
+								}
+							}
+							,
+							bullets: {
+								enable: false,
+								hide_onmobile: true,
+								hide_under: 600,
+								style: "hermes",
+								hide_onleave: true,
+								hide_delay: 200,
+								hide_delay_mobile: 1200,
+								direction: "horizontal",
+								h_align: "center",
+								v_align: "bottom",
+								h_offset: 0,
+								v_offset: 32,
+								space: 5,
+								tmp: ''
+							}
+						},
+						viewPort: {
+							enable: true,
+							outof: "pause",
+							visible_area: "80%"
+						},
+						responsiveLevels: [1200, 992, 768, 480],
+						visibilityLevels: [1200, 992, 768, 480],
+						gridwidth: [1180, 1024, 778, 480],
+						gridheight: [640, 500, 400, 300],
+						lazyType: "none",
+						parallax: {
+							type: "mouse",
+							origo: "slidercenter",
+							speed: 2000,
+							levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 25, 47, 48, 49, 50, 51, 55],
+							type: "mouse",
+						},
+						shadow: 0,
+						spinner: "off",
+						stopLoop: "off",
+						stopAfterLoops: -1,
+						stopAtSlide: -1,
+						shuffle: "off",
+						autoHeight: "off",
+						hideThumbsOnMobile: "off",
+						hideSliderAtLimit: 0,
+						hideCaptionAtLimit: 0,
+						hideAllCaptionAtLilmit: 0,
+						debugMode: false,
+						fallbacks: {
+							simplifyAll: "off",
+							nextSlideOnWindowFocus: "off",
+							disableFocusListener: false,
+						}
+					});
+				}
+			});
+
+		</script>
+		<script type="text/javascript"
+			src="{% static 'scripts/extensions/revolution.extension.actions.min.js' %}"></script>
+		<script type="text/javascript"
+			src="{% static 'scripts/extensions/revolution.extension.carousel.min.js' %}"></script>
+		<script type="text/javascript"
+			src="{% static 'scripts/extensions/revolution.extension.kenburn.min.js' %}"></script>
+		<script type="text/javascript"
+			src="{% static 'scripts/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+		<script type="text/javascript"
+			src="{% static 'scripts/extensions/revolution.extension.migration.min.js' %}"></script>
+		<script type="text/javascript"
+			src="{% static 'scripts/extensions/revolution.extension.navigation.min.js' %}"></script>
+		<script type="text/javascript"
+			src="{% static 'scripts/extensions/revolution.extension.parallax.min.js' %}"></script>
+		<script type="text/javascript"
+			src="{% static 'scripts/extensions/revolution.extension.slideanims.min.js' %}"></script>
+		<script type="text/javascript"
+			src="{% static 'scripts/extensions/revolution.extension.video.min.js' %}"></script>
+
+
+
+</body>
+
+</html>
