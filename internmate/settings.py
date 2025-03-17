@@ -13,6 +13,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 # ALLOWED_HOSTS from environment variables
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1,internmate.onrender.com', cast=lambda v: [s.strip() for s in v.split(',')])
 
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
