@@ -108,24 +108,3 @@ Follow for updates and new features 🚀
 ![image](https://github.com/user-attachments/assets/5ff5a974-c60d-4f44-8b23-26a25ebd1c8d)  
 ![image](https://github.com/user-attachments/assets/3cc20cda-3c81-4c8a-b68a-11ca6070834a)  
 ![image](https://github.com/user-attachments/assets/87e9642e-c626-44a7-ab1f-ddba098535cc)  
-
-
-
-
-
-
-
-
-
-## 📩 Contact
-
-For inquiries or support, reach out to:
-📧 **Email:** [abhisar7654@gmail.com](mailto:abhisar7654@gmail.com)  
-👤 **Author:** Abhisar  
-🔗 **GitHub:** [Abhisar's GitHub](https://github.com/abhisar292k)  
-🌐 **Live Website:** [InternMate](https://internmate.onrender.com/)  
-
----
-
-### 🔥 Stay Connected!
-Follow for updates and new features 🚀
